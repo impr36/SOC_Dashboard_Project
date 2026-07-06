@@ -1,0 +1,166 @@
+<div class="section-divider"></div>
+
+<div class="charts-section">
+
+    <div class="donut-panel">
+        <div class="chart-heading">Severity Distribution</div>
+        <div class="donut-wrapper">
+            <canvas id="donutChart"></canvas>
+        </div>
+    </div>
+
+    <div class="bar-panel">
+        <div class="chart-heading large-heading">Threat Category Distribution</div>
+        <div class="bar-wrapper">
+            <canvas id="barChart"></canvas>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="bottom-buttons">
+
+    <!-- RUN FULL SCAN -->
+    <button
+        class="action-btn"
+        id="fullScanBtn"
+        onclick="runFullScan()"
+    >
+        Run Full Scan
+        <img src="{{ url_for('static', path='icons-W/scan.png') }}" class="theme-icon">
+    </button>
+
+    <!-- REFRESH -->
+    <button
+        class="action-btn"
+        onclick="refreshDashboard()"
+    >
+        Refresh
+        <img src="{{ url_for('static', path='icons-W/refresh.png') }}" class="theme-icon">
+    </button>
+
+    <!-- SAVE FORENSICS -->
+    <button
+        class="action-btn"
+        onclick="saveForensics()"
+    >
+        Save to Forensics
+        <img src="{{ url_for('static', path='icons-W/download.png') }}" class="theme-icon">
+    </button>
+
+    <div class="button-spacer"></div>
+
+    <!-- TIME FILTER -->
+    <div class="header-right">
+
+        <button
+            class="top-btn"
+            onclick="applyTimeFilter()"
+        >Apply</button>
+
+        <select
+            class="top-select"
+            id="timeFilter"
+            onchange="applyTimeFilter()"
+        >
+            <option value="select" selected disabled>Select Range</option>
+            <option value="1h">Last 1 hr</option>
+            <option value="3h">Last 3 hrs</option>
+            <option value="6h">Last 6 hrs</option>
+            <option value="12h">Last 12 hrs</option>
+            <option value="24h">Last 24 hrs</option>
+            <option value="3d">Last 3 days</option>
+            <option value="7d">Last 7 days</option>
+            <option value="15d">Last 15 days</option>
+            <option value="30d">Last 30 days</option>
+        </select>
+
+    </div>
+
+</div>
+
+
+<div class="section-divider"></div>
+
+
+<div class="alert-section">
+
+    <div class="alert-toolbar">
+
+        <div class="alert-title-box">
+            <div class="alert-title">Alert Queue</div>
+            <div class="alert-subtitle">Grouped Alerts across all Sources</div>
+        </div>
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="dashboardSearchInput"
+                placeholder="Search by type, severity, category..."
+                autocomplete="off"
+            >
+            <button onclick="_filterTable()">
+                <img src="{{ url_for('static', path='icons-W/search.png') }}" class="theme-icon">
+            </button>
+        </div>
+
+        <div class="alert-controls">
+
+            <button
+                class="mini-btn"
+                onclick="sortAlerts(document.getElementById('sortFilter').value)"
+            >Apply</button>
+
+            <select
+                class="filter-select"
+                id="sortFilter"
+                onchange="sortAlerts(this.value)"
+            >
+                <option value="">Sort by....</option>
+                <option value="latest">Latest First</option>
+                <option value="oldest">Oldest First</option>
+                <option value="severity">Severity (High→Low)</option>
+                <option value="name">Name [A-Z]</option>
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <div class="table-container">
+
+        <table class="alert-table">
+
+            <colgroup>
+                <col style="width:50px">
+                <col style="width:160px">
+                <col style="width:200px">
+                <col style="width:100px">
+                <col style="width:140px">
+                <col style="min-width:200px;word-break:break-word">
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Time</th>
+                    <th>Type</th>
+                    <th>Severity</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+
+            <tbody id="alertTableBody"></tbody>
+
+        </table>
+
+        <div class="empty-alert-state" id="emptyAlertState">
+            No alerts Found yet !!
+        </div>
+
+    </div>
+
+</div>

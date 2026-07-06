@@ -1,0 +1,93 @@
+<!-- DETECTION RULES PAGE -->
+<div class="rules-page">
+
+    <!-- PAGE HEADER -->
+    <div class="rules-header">
+
+        <div class="rules-header-left">
+            <h1>Detection Rules</h1>
+            <p>Manage SOC detection and monitoring rules</p>
+        </div>
+
+        <!-- Admin-only: hidden for non-admin users by rules.js -->
+        <div class="rules-header-right admin-only" style="display:flex;gap:12px">
+            <button class="rule-action-btn" id="addRuleBtn"
+                style="background:#2f6bff;color:#fff;border:none;border-radius:8px;
+                padding:10px 22px;cursor:pointer;font-size:14px;font-weight:700">
+                + Add Rule
+            </button>
+            <button class="rule-delete-btn" id="deleteRuleBtn"
+                style="background:#ff3b30;color:#fff;border:none;border-radius:8px;
+                padding:10px 22px;cursor:pointer;font-size:14px;font-weight:700"
+                title="Click rows to select, then click Delete Rule">
+                🗑 Delete Rule
+            </button>
+        </div>
+
+    </div>
+
+    <!-- TOP BAR -->
+    <div class="rules-topbar">
+
+        <!-- TABS -->
+        <div class="rules-tabs">
+            <button class="rules-tab active" id="hidsRulesTab">
+                HIDS Rules
+            </button>
+            <button class="rules-tab" id="nidsRulesTab">
+                NIDS Rules
+            </button>
+        </div>
+
+        <!-- SEARCH -->
+        <div class="rules-search-box">
+            <img src="{{ url_for('static', path='icons-W/search.png') }}"
+                class="rules-search-icon theme-icon">
+            <input type="text" id="rulesSearchInput"
+                placeholder="Search rules by name, event ID, severity, or description..."
+                autocomplete="off">
+        </div>
+
+        <!-- SORT -->
+        <div class="rules-sort-section">
+            <select id="sortBy">
+                <option value="event">Event ID</option>
+                <option value="name">Rule Name</option>
+                <option value="severity">Severity</option>
+            </select>
+            <select id="sortOrder">
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+            </select>
+            <button type="button" onclick="sortRulesTable()">Sort</button>
+        </div>
+
+    </div>
+
+    <!-- Admin selection hint (shown only to admin) -->
+    <div class="admin-only" style="display:none;font-size:12px;color:#5a8a9f;
+        margin:8px 0 4px;padding-left:4px">
+        💡 Click a row to select it for deletion. Click again to deselect.
+    </div>
+
+    <!-- RULES TABLE -->
+    <div class="rules-table-wrapper">
+        <table class="rules-table" id="rulesTable">
+            <thead>
+                <tr>
+                    <th>Event ID</th>
+                    <th>Rule Name</th>
+                    <th>Threshold</th>
+                    <th>Window (Sec)</th>
+                    <th>Severity</th>
+                    <th>Description</th>
+                    <th class="admin-only" style="display:none">Edit</th>
+                </tr>
+            </thead>
+            <tbody id="rulesTableBody">
+                <!-- Populated by rules.js -->
+            </tbody>
+        </table>
+    </div>
+
+</div>

@@ -1,0 +1,165 @@
+<div class="investigation-container">
+
+    <!-- ── HEADER ── -->
+    <div class="invest-header">
+        <div class="invest-title-row">
+            <h2 class="invest-title">🔍 AI Investigation Center</h2>
+            <div id="ollamaStatusBadge" class="ollama-badge checking">
+                <span class="badge-dot"></span>
+                <span class="badge-text">Checking Ollama...</span>
+            </div>
+        </div>
+        <p class="invest-subtitle">
+            Select alerts to investigate · AI analysis with MITRE ATT&amp;CK mapping · Rule-based fallback always available
+        </p>
+    </div>
+
+    <!-- ── CONTROLS ── -->
+    <div class="invest-controls">
+
+        <div class="invest-control-group">
+            <label>Investigate by</label>
+            <select id="investMode" class="invest-select" onchange="_investModeChange()">
+                <option value="all">All Current Alerts</option>
+                <option value="severity">By Severity</option>
+                <option value="category">By Category</option>
+                <option value="ids">Selected Alert IDs</option>
+            </select>
+        </div>
+
+        <div class="invest-control-group" id="investSeverityGroup" style="display:none">
+            <label>Severity</label>
+            <select id="investSeverity" class="invest-select">
+                <option value="CRITICAL">CRITICAL</option>
+                <option value="HIGH">HIGH</option>
+                <option value="MEDIUM">MEDIUM</option>
+                <option value="LOW">LOW</option>
+            </select>
+        </div>
+
+        <div class="invest-control-group" id="investCategoryGroup" style="display:none">
+            <label>Category</label>
+            <select id="investCategory" class="invest-select">
+                <option value="Persistence">Persistence</option>
+                <option value="Defense Evasion">Defense Evasion</option>
+                <option value="Credential Access">Credential Access</option>
+                <option value="Lateral Movement">Lateral Movement</option>
+                <option value="Command and Control">Command and Control</option>
+                <option value="Execution">Execution</option>
+                <option value="Reconnaissance">Reconnaissance</option>
+                <option value="Exfiltration">Data Exfiltration</option>
+                <option value="Impact">Impact</option>
+                <option value="Authentication">Authentication</option>
+            </select>
+        </div>
+
+        <div class="invest-control-group" id="investIdsGroup" style="display:none">
+            <label>Alert IDs (comma-separated)</label>
+            <input type="text" id="investIds" class="invest-input" placeholder="e.g. 1,5,12,23">
+        </div>
+
+        <div class="invest-control-group">
+            <label>Analyst Context (optional)</label>
+            <input type="text" id="investContext" class="invest-input"
+                placeholder="Add context, e.g. 'noticed unusual USB activity'">
+        </div>
+
+        <button class="invest-run-btn" id="investRunBtn" onclick="runInvestigation()">
+            🔍 Run Investigation
+        </button>
+
+    </div>
+
+    <!-- ── RESULTS ── -->
+    <div id="investResults" style="display:none">
+
+        <!-- Risk Score Banner -->
+        <div id="riskBanner" class="risk-banner">
+            <div class="risk-score-circle" id="riskScoreCircle">
+                <span id="riskScoreNum">0</span>
+                <small>/100</small>
+            </div>
+            <div class="risk-details">
+                <div id="riskLevel" class="risk-level-badge">LOW</div>
+                <div id="attackPhase" class="attack-phase">Phase: Unknown</div>
+                <div id="generatedBy" class="generated-by">Analysis: —</div>
+            </div>
+            <div class="risk-counts" id="riskCounts"></div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="invest-tabs">
+            <button class="invest-tab active" onclick="showInvestTab('summary',this)">Summary</button>
+            <button class="invest-tab" onclick="showInvestTab('technical',this)">Technical</button>
+            <button class="invest-tab" onclick="showInvestTab('story',this)">Attack Story</button>
+            <button class="invest-tab" onclick="showInvestTab('mitre',this)">MITRE ATT&amp;CK</button>
+            <button class="invest-tab" onclick="showInvestTab('remediation',this)">Remediation</button>
+            <button class="invest-tab" onclick="showInvestTab('beginner',this)">Plain Language</button>
+            <button class="invest-tab" onclick="showInvestTab('chat',this)">💬 Chat</button>
+        </div>
+
+        <!-- Tab Panels -->
+        <div id="tab-summary" class="invest-panel active">
+            <h3>Executive Summary</h3>
+            <p id="execSummary" class="invest-text"></p>
+            <h4 style="margin-top:20px">Immediate Actions Required</h4>
+            <ul id="immediateActions" class="invest-action-list"></ul>
+        </div>
+
+        <div id="tab-technical" class="invest-panel">
+            <h3>Technical Assessment</h3>
+            <p id="technicalText" class="invest-text invest-mono"></p>
+            <div id="topAlertTypes" style="margin-top:18px"></div>
+        </div>
+
+        <div id="tab-story" class="invest-panel">
+            <h3>Attack Story</h3>
+            <p id="attackStory" class="invest-text"></p>
+        </div>
+
+        <div id="tab-mitre" class="invest-panel">
+            <h3>MITRE ATT&CK Techniques</h3>
+            <div id="mitreCards" class="mitre-cards-grid"></div>
+        </div>
+
+        <div id="tab-remediation" class="invest-panel">
+            <h3>Remediation Steps</h3>
+            <div id="remediationList" class="invest-checklist"></div>
+        </div>
+
+        <div id="tab-beginner" class="invest-panel">
+            <h3>Plain Language Explanation</h3>
+            <div class="beginner-box">
+                <p id="beginnerText" class="invest-text"></p>
+            </div>
+        </div>
+
+        <div id="tab-chat" class="invest-panel">
+            <h3>💬 Follow-up Questions</h3>
+            <p class="invest-subtitle" style="margin-bottom:14px">Ask questions about the current investigation</p>
+            <div id="chatHistory" class="chat-history"></div>
+            <div class="chat-input-row">
+                <input type="text" id="chatQuestion" class="invest-input"
+                    placeholder="e.g. Which accounts are most at risk?"
+                    onkeydown="if(event.key==='Enter') sendChatQuestion()">
+                <button class="invest-run-btn" style="padding:10px 20px"
+                    onclick="sendChatQuestion()">Ask</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Loading -->
+    <div id="investLoading" style="display:none" class="invest-loading">
+        <div class="invest-spinner"></div>
+        <div id="investLoadingText">Running investigation...</div>
+    </div>
+
+    <!-- Empty state -->
+    <div id="investEmpty" class="invest-empty">
+        <div style="font-size:48px;margin-bottom:16px">🔍</div>
+        <div style="font-size:16px;font-weight:600;margin-bottom:8px">No investigation running</div>
+        <div style="font-size:13px;color:#5a8a9f">Run a Full Scan first, then click "Run Investigation"</div>
+    </div>
+
+</div>

@@ -1,0 +1,558 @@
+/* =========================================
+   PAGE
+========================================= */
+
+.about-page{
+
+    width:100%;
+
+    min-height:100vh;
+
+    padding:40px 45px 80px 45px;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.about-hero{
+
+    width:100%;
+
+    max-width:1500px;
+
+    margin:0 auto 45px auto;
+}
+
+.about-hero h1{
+
+    color:var(--text);
+
+    font-size:68px;
+
+    font-weight:900;
+
+    line-height:1;
+
+    margin-bottom:20px;
+}
+
+.about-hero p{
+
+    width:100%;
+
+    max-width:1000px;
+
+    color:var(--text-secondary);
+
+    font-size:20px;
+
+    line-height:1.9;
+}
+
+/* =========================================
+   SECTION
+========================================= */
+
+.about-section{
+
+    width:100%;
+
+    max-width:1500px;
+
+    margin:0 auto 42px auto;
+}
+
+.section-title{
+
+    color:var(--text);
+
+    font-size:34px;
+
+    font-weight:900;
+
+    margin-bottom:26px;
+}
+
+/* =========================================
+   OVERVIEW GRID
+========================================= */
+
+.overview-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(340px,1fr));
+
+    gap:28px;
+}
+
+.overview-card{
+
+    background:var(--bg-card);
+
+    border-radius:24px;
+
+    padding:34px;
+
+    border:1px solid
+    rgba(255,255,255,0.06);
+
+    transition:0.25s ease;
+}
+
+.overview-card:hover{
+
+    transform:translateY(-4px);
+
+    background:var(--bg-hover);
+}
+
+.overview-card h2{
+
+    color:var(--text);
+
+    font-size:28px;
+
+    font-weight:800;
+
+    margin-bottom:18px;
+}
+
+.overview-card p{
+
+    color:var(--text-secondary);
+
+    font-size:16px;
+
+    line-height:1.9;
+}
+
+/* =========================================
+   PIPELINE
+========================================= */
+
+.pipeline-container{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    gap:22px;
+
+    overflow-x:auto;
+
+    padding-bottom:10px;
+}
+
+.pipeline-box{
+
+    min-width:240px;
+
+    background:var(--bg-card-2);
+
+    border-radius:22px;
+
+    padding:30px 26px;
+
+    color:var(--text);
+
+    font-size:18px;
+
+    font-weight:800;
+
+    text-align:center;
+
+    flex-shrink:0;
+}
+
+.pipeline-arrow{
+
+    color:var(--text);
+
+    font-size:38px;
+
+    font-weight:900;
+
+    flex-shrink:0;
+}
+
+/* =========================================
+   COMPARISON
+========================================= */
+
+.comparison-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(450px,1fr));
+
+    gap:28px;
+}
+
+.comparison-card{
+
+    background:var(--bg-card);
+
+    border-radius:24px;
+
+    padding:34px;
+}
+
+.comparison-card h2{
+
+    color:var(--text);
+
+    font-size:30px;
+
+    font-weight:900;
+
+    margin-bottom:24px;
+}
+
+.comparison-card ul{
+
+    padding-left:22px;
+}
+
+.comparison-card li{
+
+    color:var(--text-secondary);
+
+    font-size:16px;
+
+    line-height:1.9;
+
+    margin-bottom:14px;
+}
+
+/* =========================================
+   CORRELATION ENGINE
+========================================= */
+
+.correlation-container{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:22px;
+
+    overflow-x:auto;
+
+    padding-bottom:10px;
+}
+
+.attack-step{
+
+    min-width:260px;
+
+    background:var(--bg-card-2);
+
+    border-radius:22px;
+
+    padding:28px;
+
+    color:var(--text);
+
+    font-size:18px;
+
+    font-weight:800;
+
+    text-align:center;
+
+    flex-shrink:0;
+}
+
+.attack-arrow{
+
+    color:var(--text);
+
+    font-size:40px;
+
+    font-weight:900;
+
+    flex-shrink:0;
+}
+
+.incident-result{
+
+    min-width:320px;
+
+    background:rgba(255,77,79,0.14);
+
+    border-radius:22px;
+
+    padding:30px;
+
+    color:var(--danger);
+
+    font-size:20px;
+
+    font-weight:900;
+
+    text-align:center;
+
+    flex-shrink:0;
+}
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.features-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:22px;
+}
+
+.feature-card{
+
+    background:var(--bg-card);
+
+    border-radius:20px;
+
+    padding:26px;
+
+    color:var(--text);
+
+    font-size:17px;
+
+    font-weight:700;
+
+    text-align:center;
+
+    transition:0.2s ease;
+}
+
+.feature-card:hover{
+
+    background:var(--bg-hover);
+
+    transform:translateY(-3px);
+}
+
+/* =========================================
+   REPORTING
+========================================= */
+
+.reporting-card{
+
+    background:var(--bg-card);
+
+    border-radius:24px;
+
+    padding:36px;
+}
+
+.reporting-card p{
+
+    color:var(--text-secondary);
+
+    font-size:17px;
+
+    line-height:2;
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.about-page::-webkit-scrollbar{
+
+    width:10px;
+}
+
+.about-page::-webkit-scrollbar-track{
+
+    background:var(--bg-secondary);
+}
+
+.about-page::-webkit-scrollbar-thumb{
+
+    background:var(--bg-hover);
+
+    border-radius:20px;
+}
+
+/* =========================================
+   ABOUT IDS — ADDITIONS
+   Append these to app/static/css/about_ids.css
+========================================= */
+
+/* ─── Live Stats Grid ────────────────────── */
+
+.about-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+}
+
+.about-stat-card {
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: 28px;
+    border: 1px solid rgba(255,255,255,0.06);
+    text-align: center;
+    transition: 0.25s ease;
+}
+
+.about-stat-card:hover {
+    transform: translateY(-3px);
+    background: var(--bg-hover);
+}
+
+.about-stat-value {
+    color: var(--text);
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.about-stat-label {
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ─── Severity Breakdown ─────────────────── */
+
+.about-severity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.about-sev-card {
+    border-radius: 18px;
+    padding: 24px;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+.about-sev-value {
+    font-size: 38px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.about-sev-label {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+.sev-critical {
+    background: rgba(255,77,79,0.12);
+    border-color: rgba(255,77,79,0.25);
+}
+.sev-critical .about-sev-value,
+.sev-critical .about-sev-label { color: #ff4d4f; }
+
+.sev-high {
+    background: rgba(255,165,0,0.12);
+    border-color: rgba(255,165,0,0.25);
+}
+.sev-high .about-sev-value,
+.sev-high .about-sev-label { color: #ffa500; }
+
+.sev-medium {
+    background: rgba(24,144,255,0.12);
+    border-color: rgba(24,144,255,0.25);
+}
+.sev-medium .about-sev-value,
+.sev-medium .about-sev-label { color: #1890ff; }
+
+.sev-low {
+    background: rgba(0,200,130,0.12);
+    border-color: rgba(0,200,130,0.25);
+}
+.sev-low .about-sev-value,
+.sev-low .about-sev-label { color: #00c882; }
+
+/* ─── MITRE Tactic Bars ──────────────────── */
+
+.about-tactic-bars {
+    background: var(--bg-card);
+    border-radius: 20px;
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.tactic-bar-row {
+    display: grid;
+    grid-template-columns: 220px 1fr 80px;
+    align-items: center;
+    gap: 16px;
+}
+
+.tactic-bar-label {
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tactic-bar-track {
+    background: var(--bg-card-2);
+    border-radius: 8px;
+    height: 10px;
+    overflow: hidden;
+}
+
+.tactic-bar-fill {
+    height: 100%;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #1890ff, #00c882);
+    width: 0%;
+}
+
+.tactic-bar-count {
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 700;
+    text-align: right;
+}
+
+/* ─── Scroll Animations ──────────────────── */
+
+.about-hidden {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.about-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ─── Pipeline box hover cursor ─────────── */
+
+.pipeline-box:hover,
+.attack-step:hover {
+    background: var(--bg-hover);
+    transition: background 0.2s;
+}

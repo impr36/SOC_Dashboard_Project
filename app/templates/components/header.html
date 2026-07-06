@@ -1,0 +1,71 @@
+<div class="top-header">
+
+    <!-- LEFT: Logo + Platform -->
+    <div class="header-left">
+
+        <div class="logo-section">
+
+            <img
+                src="{{ url_for('static', path='icons-W/shield.png') }}"
+                class="logo-icon theme-icon"
+            >
+
+            <div class="logo-text">
+                <div class="logo-main">SOC</div>
+                <div class="logo-sub">Simulator</div>
+            </div>
+
+        </div>
+
+        <div class="logo-divider"></div>
+
+        <div class="platform-text">
+            <span>Host + Network</span>
+            <span>IDS Platform</span>
+        </div>
+
+    </div>
+
+
+    <!-- CENTER: Dashboard Title -->
+    <div class="header-center">
+
+        <img
+            src="{{ url_for('static', path='icons-W/cctv.png') }}"
+            class="header-icon theme-icon"
+        >
+
+        <div class="dashboard-title">
+            DASHBOARD OVERVIEW
+        </div>
+
+        <img
+            src="{{ url_for('static', path='icons-W/analytics.png') }}"
+            class="header-icon theme-icon"
+        >
+
+    </div>
+
+
+    <!-- RIGHT: User Display + Signature -->
+    <div class="header-right">
+
+        <!-- LOGGED IN USER -->
+        <div class="header-user-display" id="headerUserDisplay">
+            <div class="header-user-avatar" id="headerUserAvatar">A</div>
+            <div class="header-user-info">
+                <div class="header-user-name" id="headerUserName">Admin</div>
+                <div class="header-user-role" id="headerUserRole">ADMIN</div>
+            </div>
+        </div>
+
+        <!-- SIGNATURE -->
+        <img
+            src="{{ url_for('static', path='icons-W/sign.png') }}"
+            alt="Developer Signature"
+            class="theme-icon header-signature"
+        >
+
+    </div>
+
+</div>

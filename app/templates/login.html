@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        SOC Simulator Login
+    </title>
+
+    <!-- THEME CSS -->
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', path='css/theme.css') }}"
+    >
+
+    <!-- LOGIN CSS -->
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', path='css/login.css') }}"
+    >
+
+</head>
+
+<body class="dark-mode">
+
+    <!-- =========================================
+         LOGIN PAGE
+    ========================================= -->
+
+    <div class="login-page">
+
+        <!-- TOP BAR -->
+
+        <div class="login-topbar">
+
+            <div class="login-brand">
+
+                <img
+                    src="{{ url_for('static', path='icons-W/shield.png') }}"
+                    class="login-logo"
+                >
+
+                <div class="login-brand-text">
+
+                    <h1>
+                        SOC
+                    </h1>
+
+                    <span>
+                        Simulator
+                    </span>
+
+                </div>
+
+                <div class="login-divider"></div>
+
+                <p>
+                    Host + Network
+                    <br>
+                    IDS Platform
+                </p>
+
+            </div>
+
+            <div class="login-top-right">
+
+                <img
+                    src="{{ url_for('static', path='icons-W/sign.png') }}"
+                    class="login-signature"
+                >
+
+            </div>
+
+        </div>
+
+        <!-- LOGIN CONTAINER -->
+
+        <div class="login-container">
+
+            <!-- LEFT PANEL -->
+
+            <div class="login-left">
+
+                <div class="login-shield-wrapper">
+
+                    <img
+                        src="{{ url_for('static', path='icons-W/shield.png') }}"
+                        class="center-shield"
+                    >
+
+                </div>
+
+                <h2>
+                    SOC Simulation Platform
+                </h2>
+
+                <p class="login-subtext">
+                    Realistic. Actionable. Immersive.
+                </p>
+
+                <div class="login-features">
+
+                    <div class="feature-item">
+
+                        <img
+                            src="{{ url_for('static', path='icons-W/bell.png') }}"
+                        >
+
+                        <div>
+
+                            <h3>
+                                Real-time Threat Simulation
+                            </h3>
+
+                            <p>
+                                Experience realistic alerting and attack workflows.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="feature-item">
+
+                        <img
+                            src="{{ url_for('static', path='icons-W/target.png') }}"
+                        >
+
+                        <div>
+
+                            <h3>
+                                Investigate & Respond
+                            </h3>
+
+                            <p>
+                                Analyze incidents like a real SOC analyst.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="feature-item">
+
+                        <img
+                            src="{{ url_for('static', path='icons-W/chart.png') }}"
+                        >
+
+                        <div>
+
+                            <h3>
+                                Performance Insights
+                            </h3>
+
+                            <p>
+                                Track analyst performance and attack trends.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT PANEL -->
+
+            <div class="login-right">
+
+                <h1>
+                    Welcome Back
+                </h1>
+
+                <p class="login-description">
+                    Sign in to continue to your analyst dashboard.
+                </p>
+
+                <!-- LOGIN FORM -->
+
+                <form
+                    class="login-form"
+                    action="/login"
+                    method="post"
+                >
+
+                    <!-- USERNAME -->
+
+                    <div class="input-group">
+
+                        <img
+                            src="{{ url_for('static', path='icons-W/user.png') }}"
+                        >
+
+                        <input
+                            type="text"
+                            name="username"
+                            placeholder="Enter username"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- PASSWORD -->
+
+                    <div class="input-group">
+
+                        <img
+                            src="{{ url_for('static', path='icons-W/lock.png') }}"
+                        >
+
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- OPTIONS -->
+
+                    <div class="login-options">
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            Remember Me
+
+                        </label>
+
+                        <a href="#">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+                    <!-- LOGIN BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="login-btn"
+                    >
+                        Sign In
+                    </button>
+
+                    <!-- DIVIDER -->
+
+                    <div class="login-divider-text">
+
+                        <span>
+                            OR
+                        </span>
+
+                    </div>
+
+                    <!-- SIGNUP BUTTON -->
+
+                    <button
+                        type="button"
+                        class="signup-btn"
+                        onclick="window.location.href='/signup'"
+                    >
+                        Create New Account
+                    </button>
+
+                </form>
+
+                <!-- TERMS -->
+
+                <p class="login-terms">
+
+                    By continuing, you agree to our
+
+                    <a href="#">
+                        Terms of Service
+                    </a>
+
+                    and
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

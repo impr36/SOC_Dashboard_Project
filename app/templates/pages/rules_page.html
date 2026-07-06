@@ -1,0 +1,190 @@
+<div class="rules-page">
+
+    <!-- HEADER -->
+    <div class="rules-header">
+        <div>
+            <h2 class="rules-title">Detection Rules</h2>
+            <p class="rules-subtitle">Manage SOC detection and monitoring rules</p>
+        </div>
+        <!-- Admin-only: Add / Delete buttons -->
+        <div class="rules-header-actions" id="rulesAdminActions">
+            <button class="rules-add-btn" onclick="openAddRuleModal()">
+                + Add Rule
+            </button>
+            <button class="rules-delete-btn" id="rulesDeleteBtn"
+                onclick="deleteSelectedRule()" disabled>
+                Delete Rule
+            </button>
+        </div>
+    </div>
+
+    <!-- TABS + SEARCH + SORT -->
+    <div class="rules-toolbar">
+
+        <div class="rules-tabs">
+            <button class="rules-tab active" id="tabHIDS"
+                onclick="switchRuleTab('HIDS')">
+                HIDS Rules
+                <span class="rules-tab-count" id="hidsCount">0</span>
+            </button>
+            <button class="rules-tab" id="tabNIDS"
+                onclick="switchRuleTab('NIDS')">
+                NIDS Rules
+                <span class="rules-tab-count" id="nidsCount">0</span>
+            </button>
+        </div>
+
+        <div class="rules-search-wrap">
+            <span>🔍</span>
+            <input type="text" id="rulesSearchInput" class="rules-search-input"
+                placeholder="Search rules by name, event ID, severity, or description..."
+                oninput="filterRules()">
+        </div>
+
+        <div class="rules-sort-wrap">
+            <select id="rulesSortField" class="rules-sort-select">
+                <option value="event_id">Event ID</option>
+                <option value="rule_name">Rule Name</option>
+                <option value="severity">Severity</option>
+                <option value="threshold">Threshold</option>
+            </select>
+            <select id="rulesSortOrder" class="rules-sort-select">
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+            </select>
+            <button class="rules-sort-btn" onclick="sortRules()">Sort</button>
+        </div>
+
+    </div>
+
+    <!-- RULES TABLE -->
+    <div class="rules-table-wrapper">
+        <table class="rules-table" id="rulesTable">
+            <thead>
+                <tr>
+                    <th style="width:40px">
+                        <input type="checkbox" id="rulesSelectAll"
+                            onchange="toggleSelectAllRules(this.checked)">
+                    </th>
+                    <th>Event ID</th>
+                    <th>Rule Name</th>
+                    <th>Threshold</th>
+                    <th>Window (Sec)</th>
+                    <th>Severity</th>
+                    <th>Description</th>
+                    <th style="width:60px" id="rulesEditColHeader">Edit</th>
+                </tr>
+            </thead>
+            <tbody id="rulesTableBody">
+                <tr>
+                    <td colspan="8" style="text-align:center;padding:40px;opacity:.5">
+                        Loading rules...
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="rulesResultCount" class="rules-result-count"></div>
+
+</div>
+
+
+<!-- ══════════════════════════════════
+     ADD RULE MODAL
+══════════════════════════════════ -->
+<div id="addRuleModal" class="rules-modal-overlay" style="display:none"
+    onclick="if(event.target===this) closeAddRuleModal()">
+    <div class="rules-modal">
+
+        <div class="rules-modal-header">
+            <h3 id="addRuleModalTitle">+ Add New Rule</h3>
+            <button class="rules-modal-close" onclick="closeAddRuleModal()">✕</button>
+        </div>
+
+        <div class="rules-modal-body">
+
+            <div class="rules-form-grid">
+
+                <div class="rules-field">
+                    <label>Rule Name *</label>
+                    <input type="text" id="ruleFormName" class="rules-input"
+                        placeholder="e.g. Brute Force Login Attempt">
+                </div>
+
+                <div class="rules-field">
+                    <label>Rule Type *</label>
+                    <select id="ruleFormType" class="rules-input">
+                        <option value="HIDS">HIDS — Host Intrusion Detection</option>
+                        <option value="NIDS">NIDS — Network Intrusion Detection</option>
+                    </select>
+                </div>
+
+                <div class="rules-field">
+                    <label>Event ID *</label>
+                    <input type="number" id="ruleFormEventId" class="rules-input"
+                        placeholder="e.g. 4625">
+                </div>
+
+                <div class="rules-field">
+                    <label>Threshold (hits required) *</label>
+                    <input type="number" id="ruleFormThreshold" class="rules-input"
+                        placeholder="e.g. 5" min="1">
+                </div>
+
+                <div class="rules-field">
+                    <label>Window (seconds) *</label>
+                    <input type="number" id="ruleFormWindow" class="rules-input"
+                        placeholder="e.g. 300" min="1">
+                </div>
+
+                <div class="rules-field">
+                    <label>Severity *</label>
+                    <select id="ruleFormSeverity" class="rules-input">
+                        <option value="LOW">LOW</option>
+                        <option value="MEDIUM">MEDIUM</option>
+                        <option value="HIGH" selected>HIGH</option>
+                        <option value="CRITICAL">CRITICAL</option>
+                    </select>
+                </div>
+
+                <div class="rules-field" style="grid-column:1/-1">
+                    <label>MITRE Tactic</label>
+                    <select id="ruleFormMitreTactic" class="rules-input">
+                        <option value="">— Select —</option>
+                        <option>Reconnaissance</option>
+                        <option>Initial Access</option>
+                        <option>Execution</option>
+                        <option>Persistence</option>
+                        <option>Privilege Escalation</option>
+                        <option>Defense Evasion</option>
+                        <option>Credential Access</option>
+                        <option>Discovery</option>
+                        <option>Lateral Movement</option>
+                        <option>Collection</option>
+                        <option>Command and Control</option>
+                        <option>Exfiltration</option>
+                        <option>Impact</option>
+                    </select>
+                </div>
+
+                <div class="rules-field" style="grid-column:1/-1">
+                    <label>Description *</label>
+                    <textarea id="ruleFormDesc" class="rules-input rules-textarea"
+                        placeholder="Describe what this rule detects..." rows="3"></textarea>
+                </div>
+
+            </div>
+
+            <div id="ruleFormMsg" class="rules-form-msg" style="display:none"></div>
+
+        </div>
+
+        <div class="rules-modal-footer">
+            <button class="rules-modal-cancel" onclick="closeAddRuleModal()">Cancel</button>
+            <button class="rules-modal-save" id="ruleFormSaveBtn"
+                onclick="saveRule()">Save Rule</button>
+        </div>
+
+    </div>
+</div>

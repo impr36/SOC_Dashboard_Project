@@ -1,0 +1,174 @@
+<aside class="sidebar" id="sidebar">
+
+    <!-- MENU -->
+
+    <button
+        class="sidebar-btn"
+        onclick="toggleSidebar()"
+    >
+
+        <img
+            src="{{ url_for('static', path='icons-W/menu.png') }}"
+            class="theme-icon"
+        >
+
+        <span class="sidebar-label">
+            Menu
+        </span>
+
+    </button>
+
+
+    <!-- TOP SECTION -->
+
+    <div class="sidebar-top">
+
+        <button
+            class="sidebar-btn"
+            onclick="showPage('dashboardPage')"
+        >
+
+            <img
+                src="{{ url_for('static', path='icons-W/dashboard.png') }}"
+                class="theme-icon"
+            >
+
+            <span class="sidebar-label">
+                Dashboard
+            </span>
+
+        </button>
+
+
+        <button
+            class="sidebar-btn"
+            onclick="showPage('hidsPage')"
+        >
+
+            <img
+                src="{{ url_for('static', path='icons-W/host.png') }}"
+                class="theme-icon"
+            >
+
+            <span class="sidebar-label">
+                Host IDS
+            </span>
+
+        </button>
+
+
+        <button
+            class="sidebar-btn"
+            onclick="showPage('nidsPage')"
+        >
+
+            <img
+                src="{{ url_for('static', path='icons-W/network.png') }}"
+                class="theme-icon"
+            >
+
+            <span class="sidebar-label">
+                Network IDS
+            </span>
+
+        </button>
+
+
+        <button
+            class="sidebar-btn"
+            onclick="showPage('reportsPage')"
+        >
+
+            <img
+                src="{{ url_for('static', path='icons-W/reports.png') }}"
+                class="theme-icon"
+            >
+
+            <span class="sidebar-label">
+                Reports
+            </span>
+
+        </button>
+
+
+        <button
+            class="sidebar-btn"
+            onclick="showPage('savedFilesPage')"
+        >
+
+            <img
+                src="{{ url_for('static', path='icons-W/folder.png') }}"
+                class="theme-icon"
+            >
+
+            <span class="sidebar-label">
+                Saved Files
+            </span>
+
+        </button>
+
+    </div>
+
+
+    <!-- PUSH BOTTOM -->
+
+    <div class="sidebar-spacer"></div>
+
+
+    <!-- BOTTOM SECTION -->
+
+    <div class="sidebar-bottom">
+
+        <button
+            class="sidebar-btn"
+            onclick="showPage('rulesPage')"
+        >
+
+            <img
+                src="{{ url_for('static', path='icons-W/rules.png') }}"
+                class="theme-icon"
+            >
+
+            <span class="sidebar-label">
+                Rules
+            </span>
+
+        </button>
+
+
+        <button
+            class="sidebar-btn"
+            onclick="showPage('aboutPage')"
+        >
+
+            <img
+                src="{{ url_for('static', path='icons-W/info.png') }}"
+                class="theme-icon"
+            >
+
+            <span class="sidebar-label">
+                About IDS
+            </span>
+
+        </button>
+
+
+        <button
+            class="sidebar-btn"
+            onclick="showPage('settingsPage')"
+        >
+
+            <img
+                src="{{ url_for('static', path='icons-W/settings.png') }}"
+                class="theme-icon"
+            >
+
+            <span class="sidebar-label">
+                Settings
+            </span>
+
+        </button>
+
+    </div>
+
+</aside>

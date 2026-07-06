@@ -1,0 +1,521 @@
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+}
+
+/* =========================================
+   SIGNUP PAGE
+========================================= */
+
+.signup-page{
+
+    width:100%;
+    height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+
+    background:var(--bg-primary);
+
+    padding:10px 14px;
+}
+
+/* =========================================
+   TOPBAR
+========================================= */
+
+.signup-topbar{
+
+    width:100%;
+
+    height:90px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 8px;
+
+    flex-shrink:0;
+}
+
+.signup-brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+}
+
+.signup-logo{
+    width:48px;
+}
+
+.signup-brand-text h1{
+
+    color:var(--text-primary);
+
+    font-size:32px;
+
+    font-weight:900;
+
+    line-height:1;
+}
+
+.signup-brand-text span{
+
+    color:var(--secondary);
+
+    font-size:15px;
+
+    font-weight:700;
+}
+
+.signup-divider{
+
+    width:1px;
+
+    height:48px;
+
+    background:var(--border);
+}
+
+.signup-brand p{
+
+    color:var(--text-secondary);
+
+    font-size:13px;
+
+    font-weight:600;
+
+    line-height:1.4;
+}
+
+.signup-signature{
+    height:52px;
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.signup-container{
+
+    width:100%;
+
+    flex:1;
+
+    min-height:0;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:var(--glow);
+}
+
+/* =========================================
+   LEFT SIDE
+========================================= */
+
+.signup-left{
+
+    padding:16px 34px;
+
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.back-login-btn{
+
+    color:var(--primary);
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    font-weight:700;
+}
+
+.signup-left h1{
+
+    margin-top:10px;
+
+    color:var(--text-primary);
+
+    font-size:42px;
+
+    font-weight:900;
+}
+
+.signup-description{
+
+    margin-top:8px;
+
+    color:var(--text-secondary);
+
+    font-size:15px;
+
+    margin-bottom:18px;
+}
+
+/* =========================================
+   FORM
+========================================= */
+
+.signup-form{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:14px;
+
+    margin-top:8px;
+}
+
+.signup-row{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:18px;
+}
+
+.signup-input{
+
+    height:56px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:0 18px;
+
+    border-radius:14px;
+
+    background:var(--bg-card-2);
+
+    border:1px solid var(--border);
+}
+
+.signup-input img{
+
+    width:22px;
+}
+
+.signup-input input{
+
+    flex:1;
+
+    height:100%;
+
+    border:none;
+
+    outline:none;
+
+    background:none;
+
+    color:var(--text-primary);
+
+    font-size:16px;
+}
+
+.signup-input input::placeholder{
+
+    color:var(--text-muted);
+}
+
+.full-width{
+    width:100%;
+}
+
+/* =========================================
+   PASSWORD RULES
+========================================= */
+
+.password-rules{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+    color:var(--text-muted);
+
+    font-size:11px;
+
+    margin-top:-6px;
+}
+
+/* =========================================
+   TERMS
+========================================= */
+
+.terms-check{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    color:var(--text-secondary);
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+.terms-check a{
+
+    color:var(--primary);
+
+    text-decoration:none;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.create-account-btn{
+
+    width:100%;
+
+    height:64px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:0.25s;
+}
+
+.create-account-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 0 18px rgba(45,125,255,0.35);
+}
+
+.signup-divider-line{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    position:relative;
+}
+
+.signup-divider-line::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+
+    width:100%;
+
+    height:1px;
+
+    background:var(--border);
+}
+
+.signup-divider-line span{
+
+    position:relative;
+
+    background:var(--bg-card);
+
+    padding:0 14px;
+
+    color:var(--text-muted);
+}
+
+.google-btn{
+
+    width:100%;
+
+    height:62px;
+
+    border-radius:16px;
+
+    border:1px solid var(--border);
+
+    background:transparent;
+
+    color:var(--text-primary);
+
+    font-size:16px;
+
+    font-weight:700;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:14px;
+
+    cursor:pointer;
+}
+
+.google-btn img{
+    width:22px;
+}
+
+.already-account{
+
+    text-align:center;
+
+    color:var(--text-secondary);
+
+    font-size:15px;
+}
+
+.already-account a{
+
+    color:var(--primary);
+
+    text-decoration:none;
+
+    font-weight:700;
+}
+
+/* =========================================
+   RIGHT SIDE
+========================================= */
+
+.signup-right{
+
+    padding:20px 38px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    overflow:hidden;
+}
+
+.right-shield{
+
+    width:105px;
+
+    margin-bottom:14px;
+}
+
+.signup-right h2{
+
+    color:white;
+
+    font-size:34px;
+
+    font-weight:900;
+
+    margin-bottom:10px;
+}
+
+.right-description{
+
+    color:#9eb4c8;
+
+    text-align:center;
+
+    line-height:1.6;
+
+    margin-bottom:24px;
+
+    font-size:14px;
+}
+
+.right-features{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:16px;
+
+    margin-top:8px;
+}
+
+.right-feature{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+}
+
+.right-feature img{
+
+    width:30px;
+
+    height:30px;
+}
+
+.right-feature h3{
+
+    color:white;
+
+    font-size:16px;
+
+    margin-bottom:4px;
+}
+
+.right-feature p{
+
+    color:#9eb4c8;
+
+    line-height:1.45;
+
+    font-size:13px;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}

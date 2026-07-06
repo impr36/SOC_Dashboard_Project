@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        SOC Simulator Signup
+    </title>
+
+    <!-- THEME CSS -->
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', path='css/theme.css') }}"
+    >
+
+    <!-- SIGNUP CSS -->
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', path='css/signup.css') }}"
+    >
+
+</head>
+
+<body class="dark-mode">
+
+    <!-- =========================================
+         SIGNUP PAGE
+    ========================================= -->
+
+    <div class="signup-page">
+
+        <!-- TOP BAR -->
+
+        <div class="signup-topbar">
+
+            <div class="signup-brand">
+
+                <img
+                    src="{{ url_for('static', path='icons-W/shield.png') }}"
+                    class="signup-logo theme-icon"
+                >
+
+                <div class="signup-brand-text">
+
+                    <h1>
+                        SOC
+                    </h1>
+
+                    <span>
+                        Simulator
+                    </span>
+
+                </div>
+
+                <div class="signup-divider"></div>
+
+                <p>
+                    Host + Network
+                    <br>
+                    IDS Platform
+                </p>
+
+            </div>
+
+            <img
+                src="{{ url_for('static', path='icons-W/sign.png') }}"
+                class="signup-signature theme-icon"
+            >
+
+        </div>
+
+        <!-- MAIN CONTAINER -->
+
+        <div class="signup-container">
+
+            <!-- LEFT SIDE -->
+
+            <div class="signup-left">
+
+                <a
+                    href="/"
+                    class="back-login-btn"
+                >
+                    ← Back to Sign In
+                </a>
+
+                <h1>
+                    Create Your Account
+                </h1>
+
+                <p class="signup-description">
+                    Join the SOC Simulator platform and build real-world analyst skills.
+                </p>
+
+                <!-- FORM -->
+
+                <form
+                    class="signup-form"
+                    action="/dashboard"
+                    method="get"
+                >
+
+                    <!-- NAME ROW -->
+
+                    <div class="signup-row">
+
+                        <div class="signup-input">
+
+                            <img
+                                src="{{ url_for('static', path='icons-W/user.png') }}"
+                                class="theme-icon"
+                            >
+
+                            <input
+                                type="text"
+                                placeholder="First Name"
+                                required
+                            >
+
+                        </div>
+
+                        <div class="signup-input">
+
+                            <img
+                                src="{{ url_for('static', path='icons-W/user.png') }}"
+                                class="theme-icon"
+                            >
+
+                            <input
+                                type="text"
+                                placeholder="Last Name"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <div class="signup-input full-width">
+
+                        <img
+                            src="{{ url_for('static', path='icons-W/user.png') }}"
+                            class="theme-icon"
+                        >
+                                        
+                        <input
+                            type="text"
+                            placeholder="Create Username"
+                            required
+                        >
+                                        
+                    </div>
+
+                    <!-- ORGANIZATION -->
+
+                    <div class="signup-input full-width">
+
+                        <img
+                            src="{{ url_for('static', path='icons-W/company.png') }}"
+                            class="theme-icon"
+                        >
+
+                        <input
+                            type="text"
+                            placeholder="Organization (Optional)"
+                        >
+
+                    </div>
+
+                    <!-- PASSWORD -->
+
+                    <div class="signup-input full-width">
+
+                        <img
+                            src="{{ url_for('static', path='icons-W/lock.png') }}"
+                            class="theme-icon"
+                        >
+
+                        <input
+                            type="password"
+                            placeholder="Create Password"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- PASSWORD RULES -->
+
+                    <div class="password-rules">
+
+                        <span>
+                            • 8+ characters
+                        </span>
+
+                        <span>
+                            • 1 uppercase
+                        </span>
+
+                        <span>
+                            • 1 number
+                        </span>
+
+                        <span>
+                            • 1 special character
+                        </span>
+
+                    </div>
+
+                    <!-- CONFIRM PASSWORD -->
+
+                    <div class="signup-input full-width">
+
+                        <img
+                            src="{{ url_for('static', path='icons-W/lock.png') }}"
+                            class="theme-icon"
+                        >
+
+                        <input
+                            type="password"
+                            placeholder="Confirm Password"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- TERMS -->
+
+                    <label class="terms-check">
+
+                        <input
+                            type="checkbox"
+                            required
+                        >
+
+                        <span>
+
+                            I agree to the
+
+                            <a href="#">
+                                Terms of Service
+                            </a>
+
+                            and
+
+                            <a href="#">
+                                Privacy Policy
+                            </a>
+
+                        </span>
+
+                    </label>
+
+                    <!-- BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="create-account-btn"
+                    >
+                        Create Account
+                    </button>
+
+
+                    <!-- LOGIN LINK -->
+
+                    <p class="already-account">
+
+                        Already have an account?
+
+                        <a href="/">
+                            Sign In
+                        </a>
+
+                    </p>
+
+                </form>
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+
+            <div class="signup-right">
+
+                <img
+                    src="{{ url_for('static', path='icons-W/shield.png') }}"
+                    class="right-shield theme-icon"
+                >
+
+                <h2>
+                    Why Join SOC Simulator?
+                </h2>
+
+                <p class="right-description">
+                    Our platform helps you develop real-world SOC skills in a safe and immersive environment.
+                </p>
+
+                <!-- FEATURES -->
+
+                <div class="right-features">
+
+                    <div class="right-feature">
+
+                        <img
+                            src="{{ url_for('static', path='icons-W/bell.png') }}"
+                            class="theme-icon"
+                        >
+
+                        <div>
+
+                            <h3>
+                                Realistic Simulations
+                            </h3>
+
+                            <p>
+                                Hands-on scenarios based on real attack techniques and alerts.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="right-feature">
+
+                        <img
+                            src="{{ url_for('static', path='icons-W/target.png') }}"
+                            class="theme-icon"
+                        >
+
+                        <div>
+
+                            <h3>
+                                Investigate & Respond
+                            </h3>
+
+                            <p>
+                                Analyze alerts, hunt threats, and respond like a real SOC analyst.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="right-feature">
+
+                        <img
+                            src="{{ url_for('static', path='icons-W/chart.png') }}"
+                            class="theme-icon"
+                        >
+
+                        <div>
+
+                            <h3>
+                                Performance Insights
+                            </h3>
+
+                            <p>
+                                Track your progress and improve with detailed analytics.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="right-feature">
+
+                        <img
+                            src="{{ url_for('static', path='icons-W/team.png') }}"
+                            class="theme-icon"
+                        >
+
+                        <div>
+
+                            <h3>
+                                Learn & Grow
+                            </h3>
+
+                            <p>
+                                Built for analysts at every level from beginner to advanced.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

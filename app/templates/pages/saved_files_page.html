@@ -1,0 +1,51 @@
+<div class="saved-files-page">
+
+    <!-- HEADER -->
+    <div class="sf-page-header">
+        <div>
+            <h2 class="sf-page-title">Saved Investigation Files</h2>
+            <p class="sf-page-subtitle">
+                Forensic exports grouped by save timestamp — expand any bundle to view individual files
+            </p>
+        </div>
+        <div class="sf-page-actions">
+            <button class="sf-action-btn" onclick="loadSavedFiles()">
+                🔄 Refresh
+            </button>
+            <button class="sf-action-btn sf-btn-folder" onclick="openExportsFolder()">
+                📂 Open Exports Folder
+            </button>
+        </div>
+    </div>
+
+    <!-- SEARCH + FILTER -->
+    <div class="sf-toolbar">
+        <div class="sf-search-wrap">
+            <span class="sf-search-icon">🔍</span>
+            <input
+                type="text"
+                id="sfSearchInput"
+                class="sf-search-input"
+                placeholder="Search files or timestamps..."
+                oninput="searchSavedFiles()"
+            >
+        </div>
+        <select class="sf-filter-select" onchange="filterByType(this.value)">
+            <option value="all">All Types</option>
+            <option value="JSON">JSON</option>
+            <option value="CSV">CSV</option>
+            <option value="TXT">TXT</option>
+        </select>
+        <div class="sf-bundle-count" id="savedFilesCount">0 bundles</div>
+    </div>
+
+    <!-- BUNDLES CONTAINER -->
+    <div id="savedFilesContainer" class="sf-bundles-container">
+        <div style="text-align:center;padding:60px;color:#5a8a9f">
+            <div style="font-size:40px;margin-bottom:14px">📁</div>
+            <div style="font-size:15px;font-weight:600;margin-bottom:6px">No files yet</div>
+            <div style="font-size:13px">Click "Save to Forensics" on the dashboard to create an export</div>
+        </div>
+    </div>
+
+</div>

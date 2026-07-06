@@ -1,0 +1,153 @@
+/* =========================================
+   SAVED FILES PAGE
+========================================= */
+
+.saved-files-page{
+
+    width:100%;
+
+    min-height:100vh;
+
+    padding:35px;
+
+    overflow-y:auto;
+}
+
+/* HEADER */
+
+.saved-files-header{
+
+    margin-bottom:34px;
+}
+
+.saved-files-header h1{
+
+    color:var(--text);
+
+    font-size:58px;
+
+    font-weight:900;
+
+    margin-bottom:14px;
+}
+
+.saved-files-header p{
+
+    color:var(--text-secondary);
+
+    font-size:18px;
+}
+
+/* LIST */
+
+.saved-files-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+}
+
+/* CARD */
+
+.saved-file-card{
+
+    background:var(--bg-card);
+
+    border-radius:22px;
+
+    padding:24px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+/* LEFT */
+
+.file-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+}
+
+.file-icon{
+
+    width:70px;
+    height:70px;
+
+    border-radius:18px;
+
+    background:var(--bg-card-2);
+
+    color:var(--text);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:15px;
+
+    font-weight:900;
+}
+
+.file-left h2{
+
+    color:var(--text);
+
+    font-size:22px;
+
+    margin-bottom:8px;
+}
+
+.file-left span{
+
+    color:var(--text-secondary);
+}
+
+/* RIGHT */
+
+.file-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:24px;
+}
+
+.file-right span{
+
+    color:var(--text);
+
+    font-size:14px;
+}
+
+.file-right button{
+
+    height:48px;
+
+    padding:0 22px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:var(--bg-card-2);
+
+    color:var(--text);
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+}

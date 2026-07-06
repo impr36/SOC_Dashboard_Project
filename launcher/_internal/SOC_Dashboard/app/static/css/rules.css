@@ -1,0 +1,561 @@
+/* =========================================
+   RULES PAGE
+========================================= */
+
+.rules-page{
+
+    width:100%;
+
+    height:100%;
+
+    padding:24px;
+
+    overflow-y:auto;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.rules-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    margin-bottom:34px;
+}
+
+.rules-header-left h1{
+
+    color:var(--text);
+
+    font-size:38px;
+
+    font-weight:800;
+
+    margin-bottom:5px;
+}
+
+.rules-header-left p{
+
+    color:var(--text-secondary);
+
+    font-size:15px;
+}
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.rules-header-right{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-end;
+
+    gap:14px;
+
+    flex-wrap:nowrap;
+}
+
+.rule-action-btn{
+    height:48px;
+
+    padding:0 22px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:var(--success);
+
+    color:var(--text);
+
+    font-size:16px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.25s;
+    box-shadow:var(--glow);
+}
+
+.rule-delete-btn{
+
+    height:48px;
+
+    padding:0 22px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:var(--danger);
+
+    color:var(--text);
+
+    font-size:16px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.25s;
+    box-shadow:var(--glow);
+}
+
+.rule-action-btn:hover,
+.rule-delete-btn:hover{
+
+    background:var(--bg-hover);
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.rules-table-wrapper{
+
+    width:100%;
+
+    height:calc(100vh - 280px);
+
+    overflow-y:auto;
+
+    border-radius:18px;
+
+    border:1px solid var(--border-soft);
+
+    background:var(--bg-card);
+    box-shadow:var(--glow);
+}
+
+/* Scrollbar */
+
+.rules-table-wrapper::-webkit-scrollbar{
+
+    width:10px;
+}
+
+.rules-table-wrapper::-webkit-scrollbar-thumb{
+
+    background:var(--bg-hover);
+    border-radius:25px;
+}
+
+.rules-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    table-layout:fixed;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.rules-table th{
+
+    background:var(--bg-card-2);
+
+    color:var(--text);
+
+    height:70px;
+
+    padding:0 18px;
+
+    font-size:17px;
+
+    font-weight:800;
+
+    vertical-align:middle;
+}
+
+/* =========================================
+   BODY
+========================================= */
+
+.rules-table td{
+
+    background:var(--bg-card);
+
+    color:var(--text);
+
+    padding:18px;
+
+    font-size:15px;
+
+    border-bottom:1px solid var(--border-soft);
+
+    vertical-align:middle;
+
+    line-height:1.4;
+}
+
+/* =========================================
+   COLUMN WIDTHS
+========================================= */
+
+/* Event ID */
+
+.rules-table th:nth-child(1),
+.rules-table td:nth-child(1){
+
+    width:100px;
+
+    text-align:left;
+}
+
+/* Rule Name */
+
+.rules-table th:nth-child(2),
+.rules-table td:nth-child(2){
+
+    width:260px;
+
+    text-align:left;
+}
+
+/* Threshold */
+
+.rules-table th:nth-child(3){
+
+    width:120px;
+
+    text-align:center;
+
+}
+
+.rules-table td:nth-child(3){
+
+    width:115px;
+
+    text-align:center;
+}
+
+/* Window-Sec */
+
+.rules-table th:nth-child(4),
+.rules-table td:nth-child(4){
+
+    width:130px;
+
+    text-align:center;
+}
+
+/* Severity */
+
+.rules-table th:nth-child(5),
+.rules-table td:nth-child(5){
+
+    width:140px;
+
+    text-align:center;
+
+    font-weight:800;
+}
+
+/* Description */
+
+.rules-table th:nth-child(6),
+.rules-table td:nth-child(6){
+
+    width:auto;
+
+    text-align:left;
+}
+
+/* Edit */
+
+.rules-table th:nth-child(7),
+.rules-table td:nth-child(7){
+
+    width:130px;
+
+    text-align:center;
+}
+
+/* =========================================
+   HOVER
+========================================= */
+
+.rules-table tr:hover td{
+
+    background:var(--bg-hover);
+}
+
+/* =========================================
+   TEXT CONTROL
+========================================= */
+
+.rules-table th,
+.rules-table td{
+
+    /* overflow:hidden; */
+
+    word-break:break-word;
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.edit-btn{
+
+    width:110px;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:var(--bg-card-2);
+
+    color:var(--text);
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+    box-shadow:var(--glow);
+}
+
+
+/* =========================================
+   SEVERITY COLORS
+========================================= */
+
+.severity-low{
+    color:var(--success);
+    font-weight:700;
+}
+
+.severity-medium{
+    color:var(--warning);
+    font-weight:700;
+}
+
+.severity-high{
+    color:var(--high);
+    font-weight:700;
+}
+
+.severity-critical{
+    color:var(--critical);
+    font-weight:800;
+}
+
+/* =========================================
+   EDIT BUTTON
+========================================= */
+
+.rule-edit-btn{
+
+    width:90px;
+    height:38px;
+
+    border:none;
+    border-radius:12px;
+
+    background:var(--bg-card-2);
+
+    color:var(--text);
+
+    font-size:14px;
+    font-weight:700;
+
+    cursor:pointer;
+    box-shadow:var(--glow);
+}
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.rules-topbar{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:22px;
+
+    margin:22px 0 16px 0;
+}
+
+/* =========================================
+   RULE TABS
+========================================= */
+
+.rules-tabs{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+}
+
+.rules-tab{
+
+    width:150px;
+    height:52px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:var(--bg-card);
+
+    color:var(--text);
+
+    font-size:17px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.25s;
+    box-shadow:var(--glow);
+}
+
+.rules-tab.active{
+
+    background:var(--bg-hover);
+}
+
+/* =========================================
+   SEARCH BAR
+========================================= */
+
+.rules-search-box{
+
+    flex:1;
+
+    max-width:520px;
+
+    height:52px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:0 18px;
+
+    border-radius:30px;
+
+    background:var(--bg-card-2);
+
+    border:2px solid var(--border-soft);
+}
+
+.rules-search-box img{
+
+    width:24px;
+    height:24px;
+}
+
+.rules-search-box input{
+
+    flex:1;
+
+    height:100%;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    color:var(--text);
+
+    font-size:16px;
+
+    font-weight:500;
+}
+
+.rules-search-box input::placeholder{
+
+    color:var(--text-muted);
+}
+
+/* =========================================
+   SORT SECTION
+========================================= */
+
+.rules-sort-section{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+    box-shadow:var(--glow);
+}
+
+.rules-sort-section select{
+
+    width:135px;
+
+    height:52px;
+
+    padding:0 14px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:16px;
+
+    background:var(--bg-card-2);
+
+    color:var(--text);
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+.rules-sort-section button{
+
+    width:85px;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:var(--primary);
+
+    color:var(--text);
+
+    font-size:15px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:0.2s;
+}
+
+.rules-sort-section button:hover{
+
+    background:var(--bg-hover);
+}

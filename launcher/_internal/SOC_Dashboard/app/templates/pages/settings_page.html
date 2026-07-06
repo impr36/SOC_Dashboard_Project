@@ -1,0 +1,396 @@
+<!-- =========================================
+     SETTINGS PAGE
+========================================= -->
+
+<div class="settings-page">
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
+    <div class="settings-header">
+
+        <h1>SOC Platform Settings</h1>
+
+        <p>
+            Configure detection engine, dashboard behavior,
+            analyst workflow, admin management,
+            and security controls
+        </p>
+
+    </div>
+
+    <!-- =====================================
+         PLATFORM STATS BAR
+    ====================================== -->
+
+    <div class="settings-stats-bar">
+
+        <div class="settings-stat">
+            <span class="settings-stat-value" id="stat-alerts">—</span>
+            <span class="settings-stat-label">Total Alerts</span>
+        </div>
+
+        <div class="settings-stat">
+            <span class="settings-stat-value" id="stat-rules">—</span>
+            <span class="settings-stat-label">Active Rules</span>
+        </div>
+
+        <div class="settings-stat">
+            <span class="settings-stat-value" id="stat-users">—</span>
+            <span class="settings-stat-label">Active Users</span>
+        </div>
+
+        <div class="settings-stat">
+            <span class="settings-stat-value" id="stat-reports">—</span>
+            <span class="settings-stat-label">Total Reports</span>
+        </div>
+
+    </div>
+
+    <!-- =====================================
+         SETTINGS GRID
+    ====================================== -->
+
+    <div class="settings-grid">
+
+        <!-- DETECTION ENGINE -->
+
+        <div class="settings-card">
+
+            <h2>Detection Engine</h2>
+
+            <div class="setting-item">
+                <span>Real-Time Detection</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-realtime">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <span>Behavioral Correlation</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-behavioral">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <span>Auto Severity Escalation</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-escalation">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting-group">
+                <label>
+                    Detection Sensitivity
+                    <span id="label-sensitivity" style="float:right;opacity:.7">78%</span>
+                </label>
+                <input
+                    type="range"
+                    id="range-sensitivity"
+                    min="1"
+                    max="100"
+                    value="78"
+                >
+            </div>
+
+        </div>
+
+        <!-- DASHBOARD PREFERENCES -->
+
+        <div class="settings-card">
+
+            <h2>Dashboard Preferences</h2>
+
+            <div class="setting-group">
+                <label>Dashboard Theme</label>
+                <select id="select-theme">
+                    <option value="dark">Dark Mode</option>
+                    <option value="light">Light Mode</option>
+                </select>
+            </div>
+
+            <div class="setting-group">
+                <label>Auto Refresh Interval</label>
+                <select id="select-refresh">
+                    <option value="5">5 Seconds</option>
+                    <option value="15">15 Seconds</option>
+                    <option value="30">30 Seconds</option>
+                    <option value="60">60 Seconds</option>
+                </select>
+            </div>
+
+            <div class="setting-item">
+                <span>Compact Dashboard Mode</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-compact">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+        </div>
+
+        <!-- HIDS CONFIGURATION -->
+
+        <div class="settings-card">
+
+            <h2>HIDS Configuration</h2>
+
+            <div class="setting-item">
+                <span>Process Monitoring</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-process">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <span>Registry Monitoring</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-registry">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <span>PowerShell Detection</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-powershell">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+        </div>
+
+        <!-- NIDS CONFIGURATION -->
+
+        <div class="settings-card">
+
+            <h2>NIDS Configuration</h2>
+
+            <div class="setting-item">
+                <span>Packet Inspection</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-packet">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <span>DNS Tunneling Detection</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-dns">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <span>Exfiltration Detection</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-exfil">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+        </div>
+
+        <!-- INCIDENT REPORTING -->
+
+        <div class="settings-card">
+
+            <h2>Incident Reporting</h2>
+
+            <div class="setting-group">
+                <label>Analyst Signature</label>
+                <input
+                    type="text"
+                    id="input-signature"
+                    placeholder="Your name or team identifier"
+                    autocomplete="off"
+                >
+            </div>
+
+            <div class="setting-group">
+                <label>Report Retention (days)</label>
+                <select id="select-report-retain">
+                    <option value="30">30 Days</option>
+                    <option value="90">90 Days</option>
+                    <option value="180">180 Days</option>
+                    <option value="365">365 Days</option>
+                </select>
+            </div>
+
+            <div class="setting-item">
+                <span>Enable PDF Export</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-pdf">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+        </div>
+
+        <!-- STORAGE & RETENTION -->
+
+        <div class="settings-card">
+
+            <h2>Storage &amp; Retention</h2>
+
+            <div class="setting-group">
+                <label>Alert Retention (days)</label>
+                <select id="select-alert-retain">
+                    <option value="7">7 Days</option>
+                    <option value="30">30 Days</option>
+                    <option value="90">90 Days</option>
+                    <option value="180">180 Days</option>
+                </select>
+            </div>
+
+            <div class="setting-item">
+                <span>Auto Cleanup Old Alerts</span>
+                <label class="switch">
+                    <input type="checkbox" id="toggle-cleanup">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =====================================
+         ADMIN MANAGEMENT (admin role only)
+    ====================================== -->
+
+    <div class="admin-management" id="admin-management-section">
+
+        <h2>Admin Management</h2>
+
+        <!-- LIVE USER TABLE -->
+
+        <div class="admin-table-wrapper">
+
+            <table class="admin-table">
+
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Role</th>
+                        <th>Last Login</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="admin-table-body">
+                    <tr>
+                        <td colspan="5" style="opacity:.5">
+                            Loading users...
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <!-- PASSWORD CHANGE -->
+
+        <div class="password-section">
+
+            <h3>Change Password</h3>
+
+            <div class="password-grid">
+
+                <input
+                    type="password"
+                    id="input-current-pw"
+                    placeholder="Current Password"
+                    autocomplete="current-password"
+                >
+
+                <input
+                    type="password"
+                    id="input-new-pw"
+                    placeholder="New Password (min 8 chars)"
+                    autocomplete="new-password"
+                >
+
+                <input
+                    type="password"
+                    id="input-confirm-pw"
+                    placeholder="Confirm New Password"
+                    autocomplete="new-password"
+                >
+
+            </div>
+
+            <button
+                id="btn-change-password"
+                class="save-settings-btn"
+                style="margin-top:12px"
+            >
+                Update Password
+            </button>
+
+        </div>
+
+        <!-- RBAC REFERENCE -->
+
+        <div class="rbac-section">
+
+            <h3>Role Based Access Control</h3>
+
+            <div class="rbac-grid">
+
+                <div class="rbac-card">
+                    <h4>Super Admin</h4>
+                    <p>Full platform access — manage users, rules, settings, reports</p>
+                </div>
+
+                <div class="rbac-card">
+                    <h4>SOC Analyst</h4>
+                    <p>Incident investigation — view alerts, update status, submit reports</p>
+                </div>
+
+                <div class="rbac-card">
+                    <h4>Incident Responder</h4>
+                    <p>Containment workflow — respond to active incidents, escalate</p>
+                </div>
+
+                <div class="rbac-card">
+                    <h4>Viewer</h4>
+                    <p>Read-only access — view dashboard, alerts, and reports</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =====================================
+         ACTIONS
+    ====================================== -->
+
+    <div class="settings-actions">
+
+        <button class="save-settings-btn" id="btn-save">
+            Save Configuration
+        </button>
+
+        <button class="reset-settings-btn admin-only" id="btn-reset">
+            Reset Default
+        </button>
+
+        <button class="logout-btn" id="btn-logout">
+            Logout
+        </button>
+
+    </div>
+
+</div>

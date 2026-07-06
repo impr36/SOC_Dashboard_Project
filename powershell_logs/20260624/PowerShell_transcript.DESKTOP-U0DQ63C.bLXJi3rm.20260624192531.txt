@@ -1,0 +1,34 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260624192532
+Username: DESKTOP-U0DQ63C\Student VM
+RunAs User: DESKTOP-U0DQ63C\Student VM
+Configuration Name: 
+Machine: DESKTOP-U0DQ63C (Microsoft Windows NT 10.0.19044.0)
+Host Application: powershell Get-CimInstance Win32_StartupCommand | Select-Object Name, Command
+Process ID: 3896
+PSVersion: 5.1.19041.7291
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.7291
+BuildVersion: 10.0.19041.7291
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+PS>Get-CimInstance Win32_StartupCommand | Select-Object Name, Command
+
+Name                                                     Command
+----                                                     -------
+Proton VPN                                               C:\Program Files\Proton\VPN\ProtonVPN.Launcher.exe "----ms-...
+MicrosoftEdgeAutoLaunch_047A08F9E0465400F4ABFCA04CD012FA "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.e...
+SecurityHealth                                           %windir%\system32\SecurityHealthSystray.exe
+VBoxTray                                                 %SystemRoot%\system32\VBoxTray.exe
+
+
+PS>$global:?
+True
+**********************
+Windows PowerShell transcript end
+End time: 20260624192532
+**********************

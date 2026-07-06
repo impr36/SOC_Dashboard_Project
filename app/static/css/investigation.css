@@ -1,0 +1,484 @@
+/* =========================================
+   INVESTIGATION CENTER STYLES
+========================================= */
+
+.investigation-container {
+    padding: 24px;
+    max-width: 1200px;
+}
+
+.invest-header { margin-bottom: 24px; }
+
+.invest-title-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.invest-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.invest-subtitle {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 6px 0 0;
+}
+
+/* Ollama badge */
+.ollama-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid;
+}
+.ollama-badge.checking { border-color: #3a6a9a; color: var(--text-secondary); }
+.ollama-badge.online   { border-color: #55d800; color: #55d800; background: rgba(85,216,0,0.08); }
+.ollama-badge.offline  { border-color: var(--text-secondary); color: var(--text-secondary); background: rgba(90,138,159,0.08); }
+
+.badge-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+    animation: badgePulse 2s infinite;
+}
+@keyframes badgePulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+/* Controls */
+.invest-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-end;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.invest-control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 180px;
+}
+
+.invest-control-group label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.invest-select, .invest-input {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+    outline: none;
+}
+.invest-select:focus, .invest-input:focus {
+    border-color: var(--primary);
+}
+
+.invest-run-btn {
+    background: linear-gradient(135deg, #var(--bg-hover), var(--primary));
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+}
+.invest-run-btn:hover   { opacity: 0.85; }
+.invest-run-btn:disabled{ opacity: 0.5; cursor: not-allowed; }
+
+/* Risk banner */
+.risk-banner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.risk-score-circle {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    border: 4px solid #888;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--text-primary);
+    flex-shrink: 0;
+}
+.risk-score-circle small { font-size: 11px; color: var(--text-secondary); font-weight: 400; }
+
+.risk-details { display: flex; flex-direction: column; gap: 6px; }
+
+.risk-level-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 800;
+    border: 1px solid currentColor;
+    width: fit-content;
+}
+
+.attack-phase { font-size: 13px; color: var(--text-secondary); }
+.generated-by { font-size: 12px; font-weight: 600; }
+
+.risk-counts {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-left: auto;
+}
+.risk-count-item { font-size: 13px; font-weight: 700; }
+
+/* Tabs */
+.invest-tabs {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 20px;
+}
+
+.invest-tab {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    padding: 10px 18px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s;
+}
+.invest-tab:hover  { color: var(--text-primary); }
+.invest-tab.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+/* Panels */
+.invest-panel { display: none; }
+.invest-panel.active { display: block; }
+
+.invest-panel h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 14px;
+    color: var(--text-primary);
+}
+.invest-panel h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    color: var(--text-secondary);
+}
+
+.invest-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-primary);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+}
+.invest-mono { font-family: 'Courier New', monospace; font-size: 13px; }
+
+/* Action list */
+.invest-action-list { list-style: none; padding: 0; margin: 0; }
+.invest-action-item {
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid #ff3b30;
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--text-primary);
+}
+
+/* MITRE cards */
+.mitre-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
+}
+
+.mitre-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    border-top: 3px solid var(--primary);
+}
+.mitre-id    { font-size: 12px; font-weight: 800; color: var(--primary); margin-bottom: 6px; }
+.mitre-name  { font-size: 14px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.mitre-tactic{ font-size: 12px; color: var(--text-secondary); }
+.mitre-count { font-size: 12px; color: #ffd21f; margin-top: 6px; font-weight: 700; }
+
+/* Remediation checklist */
+.invest-checklist { display: flex; flex-direction: column; gap: 10px; }
+.invest-check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+}
+.invest-checkbox { margin-top: 2px; width: 16px; height: 16px; cursor: pointer; }
+.invest-check-item label { font-size: 13px; line-height: 1.6; color: var(--text-primary); cursor: pointer; }
+
+/* Beginner box */
+.beginner-box {
+    background: rgba(45,125,255,0.06);
+    border: 1px solid rgba(45,125,255,0.3);
+    border-radius: 12px;
+    padding: 20px;
+}
+.beginner-box p { font-size: 15px; line-height: 1.9; color: var(--text-primary); margin: 0; }
+
+/* Stats */
+.invest-stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: var(--text-primary);
+}
+.invest-count-badge {
+    background: #var(--bg-hover);
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Chat */
+.chat-history {
+    min-height: 150px;
+    max-height: 300px;
+    overflow-y: auto;
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.chat-msg { font-size: 13px; line-height: 1.6; color: var(--text-primary); padding: 8px 12px;
+    border-radius: 8px; }
+.chat-user  { background: rgba(45,125,255,0.08); border: 1px solid rgba(45,125,255,0.2); }
+.chat-ai    { background: var(--bg-card); border: 1px solid var(--border); }
+.chat-error { background: rgba(255,59,48,0.08); color: #ff3b30; }
+.chat-input-row { display: flex; gap: 10px; }
+.chat-input-row .invest-input { flex: 1; }
+
+/* Loading */
+.invest-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    gap: 20px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+.invest-spinner {
+    width: 48px; height: 48px;
+    border: 4px solid var(--border);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Empty state */
+.invest-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-secondary);
+}
+
+/* Light mode overrides */
+body.light-mode .invest-text,
+body.light-mode .invest-action-item,
+body.light-mode .mitre-card,
+body.light-mode .invest-check-item,
+body.light-mode .chat-msg { background: #ffffff; }
+
+body.light-mode .invest-controls { background: #ffffff; }
+body.light-mode .risk-banner     { background: #ffffff; }
+
+/* =========================================
+   INVESTIGATION — FULL PAGE & FONT FIX
+========================================= */
+
+.investigation-container {
+    padding: 28px 32px;
+    max-width: 100%;
+    min-height: calc(100vh - 92px);
+    background: var(--bg-primary);
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--text-primary);
+}
+
+.invest-title {
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--text-primary) !important;
+    font-size: 26px;
+}
+
+.invest-subtitle {
+    color: var(--text-secondary) !important;
+}
+
+/* Controls dropdowns match dashboard theme */
+.invest-select,
+.invest-input {
+    background: var(--bg-card-2) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-primary) !important;
+    font-family: 'Segoe UI', sans-serif;
+    height: 42px;
+}
+
+.invest-select option {
+    background: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+}
+
+.invest-controls {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+}
+
+.invest-control-group label {
+    color: var(--text-secondary) !important;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.invest-run-btn {
+    background: var(--primary) !important;
+    font-family: 'Segoe UI', sans-serif;
+    height: 42px;
+}
+
+/* Risk banner */
+.risk-banner {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+}
+
+.risk-score-circle {
+    color: var(--text-primary) !important;
+}
+
+/* Tabs */
+.invest-tab {
+    color: var(--text-secondary) !important;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+}
+.invest-tab.active { color: var(--primary) !important; border-bottom-color: var(--primary) !important; }
+.invest-tab:hover  { color: var(--text-primary) !important; }
+.invest-tabs { border-bottom-color: var(--border) !important; }
+
+/* Panels */
+.invest-panel h3 {
+    color: var(--text-primary) !important;
+    font-family: 'Segoe UI', sans-serif;
+}
+.invest-panel h4 { color: var(--text-secondary) !important; }
+
+.invest-text {
+    background: var(--bg-card) !important;
+    border-color: var(--border) !important;
+    color: var(--text-primary) !important;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.invest-action-item {
+    background: var(--bg-card) !important;
+    border-color: var(--border) !important;
+    color: var(--text-primary) !important;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.mitre-card {
+    background: var(--bg-card) !important;
+    border-color: var(--border) !important;
+}
+.mitre-name  { color: var(--text-primary) !important; }
+.mitre-tactic { color: var(--text-secondary) !important; }
+
+.invest-check-item {
+    background: var(--bg-card) !important;
+    border-color: var(--border) !important;
+}
+.invest-check-item label { color: var(--text-primary) !important; }
+
+.beginner-box { background: rgba(45,125,255,0.06) !important; border-color: rgba(45,125,255,0.25) !important; }
+.beginner-box p { color: var(--text-primary) !important; }
+
+.invest-stat-row {
+    background: var(--bg-card) !important;
+    border-color: var(--border) !important;
+    color: var(--text-primary) !important;
+}
+.invest-count-badge { background: var(--bg-hover) !important; }
+
+.chat-history { background: var(--bg-primary) !important; border-color: var(--border) !important; }
+.chat-user  { background: rgba(45,125,255,0.08) !important; border-color: rgba(45,125,255,0.2) !important; }
+.chat-ai    { background: var(--bg-card) !important; border-color: var(--border) !important; }
+.chat-msg   { color: var(--text-primary) !important; font-family: 'Segoe UI', sans-serif; }
+
+.invest-loading { color: var(--text-secondary) !important; }
+.invest-empty   { color: var(--text-secondary) !important; }
+.invest-spinner { border-color: var(--border) !important; border-top-color: var(--primary) !important; }
+
+/* Light mode overrides */
+body.light-mode .invest-select option { background: #ffffff !important; color: #0d1f2d !important; }
+body.light-mode .invest-text          { background: #ffffff !important; }
+body.light-mode .invest-action-item   { background: #ffffff !important; }
+body.light-mode .mitre-card           { background: #ffffff !important; }
+body.light-mode .invest-check-item    { background: #ffffff !important; }
+body.light-mode .chat-ai              { background: #ffffff !important; }

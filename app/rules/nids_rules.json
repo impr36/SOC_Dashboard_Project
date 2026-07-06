@@ -1,0 +1,4942 @@
+{
+  "TCP SYN Port Scan": {
+    "rule_type": "NIDS",
+    "event_id": 3001,
+    "threshold": 20,
+    "window_sec": 60,
+    "severity": "HIGH",
+    "description": "Multiple TCP SYN packets sent to different ports indicating port scanning activity.",
+    "mitre_tactic": "Reconnaissance",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "TCP Connect Scan": {
+    "rule_type": "NIDS",
+    "event_id": 3002,
+    "threshold": 15,
+    "window_sec": 60,
+    "severity": "HIGH",
+    "description": "TCP connect scan behavior detected against multiple services.",
+    "mitre_tactic": "Reconnaissance",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "FIN Scan Detection": {
+    "rule_type": "NIDS",
+    "event_id": 3003,
+    "threshold": 10,
+    "window_sec": 60,
+    "severity": "MEDIUM",
+    "description": "TCP FIN scan packets detected.",
+    "mitre_tactic": "Reconnaissance",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "NULL Scan Detection": {
+    "rule_type": "NIDS",
+    "event_id": 3004,
+    "threshold": 10,
+    "window_sec": 60,
+    "severity": "MEDIUM",
+    "description": "TCP NULL scan behavior detected.",
+    "mitre_tactic": "Reconnaissance",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "XMAS Scan Detection": {
+    "rule_type": "NIDS",
+    "event_id": 3005,
+    "threshold": 10,
+    "window_sec": 60,
+    "severity": "MEDIUM",
+    "description": "TCP XMAS scan packets detected.",
+    "mitre_tactic": "Reconnaissance",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "UDP Port Scan": {
+    "rule_type": "NIDS",
+    "event_id": 3006,
+    "threshold": 15,
+    "window_sec": 60,
+    "severity": "HIGH",
+    "description": "UDP port scanning activity detected.",
+    "mitre_tactic": "Reconnaissance",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "ICMP Sweep": {
+    "rule_type": "NIDS",
+    "event_id": 3007,
+    "threshold": 25,
+    "window_sec": 60,
+    "severity": "MEDIUM",
+    "description": "ICMP ping sweep activity detected.",
+    "mitre_tactic": "Reconnaissance",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "Masscan Signature": {
+    "rule_type": "NIDS",
+    "event_id": 3008,
+    "threshold": 50,
+    "window_sec": 30,
+    "severity": "HIGH",
+    "description": "Masscan-style high-speed scanning activity detected.",
+    "mitre_tactic": "Reconnaissance",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "Nmap OS Detection": {
+    "rule_type": "NIDS",
+    "event_id": 3009,
+    "threshold": 10,
+    "window_sec": 60,
+    "severity": "MEDIUM",
+    "description": "Nmap operating system fingerprinting detected.",
+    "mitre_tactic": "Reconnaissance",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "Service Enumeration": {
+    "rule_type": "NIDS",
+    "event_id": 3010,
+    "threshold": 20,
+    "window_sec": 60,
+    "severity": "LOW",
+    "description": "Network service enumeration activity detected.",
+    "mitre_tactic": "Discovery",
+    "mitre_technique": "T1087 - Account Discovery"
+  },
+  "SMB Enumeration": {
+    "rule_type": "NIDS",
+    "event_id": 3011,
+    "threshold": 15,
+    "window_sec": 60,
+    "severity": "MEDIUM",
+    "description": "Suspicious SMB enumeration traffic detected.",
+    "mitre_tactic": "Discovery",
+    "mitre_technique": "T1087 - Account Discovery"
+  },
+  "NetBIOS Enumeration": {
+    "rule_type": "NIDS",
+    "event_id": 3012,
+    "threshold": 15,
+    "window_sec": 60,
+    "severity": "LOW",
+    "description": "NetBIOS name enumeration activity detected.",
+    "mitre_tactic": "Discovery",
+    "mitre_technique": "T1087 - Account Discovery"
+  },
+  "LDAP Enumeration": {
+    "rule_type": "NIDS",
+    "event_id": 3013,
+    "threshold": 20,
+    "window_sec": 60,
+    "severity": "MEDIUM",
+    "description": "LDAP reconnaissance activity detected.",
+    "mitre_tactic": "Discovery",
+    "mitre_technique": "T1087 - Account Discovery"
+  },
+  "DNS Zone Transfer Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3014,
+    "threshold": 2,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Unauthorized DNS zone transfer attempt detected.",
+    "mitre_tactic": "Discovery",
+    "mitre_technique": "T1082 - System Information Discovery"
+  },
+  "DNS Tunneling Activity": {
+    "rule_type": "NIDS",
+    "event_id": 3015,
+    "threshold": 50,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Potential DNS tunneling communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071.004 - DNS"
+  },
+  "Suspicious TXT Queries": {
+    "rule_type": "NIDS",
+    "event_id": 3016,
+    "threshold": 30,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Excessive DNS TXT queries detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "DNS Beaconing": {
+    "rule_type": "NIDS",
+    "event_id": 3017,
+    "threshold": 20,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Periodic DNS beaconing activity detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Fast Flux DNS": {
+    "rule_type": "NIDS",
+    "event_id": 3018,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Fast-flux DNS infrastructure behavior detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071.004 - DNS"
+  },
+  "ARP Spoofing": {
+    "rule_type": "NIDS",
+    "event_id": 3019,
+    "threshold": 10,
+    "window_sec": 60,
+    "severity": "HIGH",
+    "description": "ARP spoofing or ARP poisoning attack detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "Rogue DHCP Server": {
+    "rule_type": "NIDS",
+    "event_id": 3020,
+    "threshold": 3,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Unauthorized DHCP server activity detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "DHCP Starvation Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3021,
+    "threshold": 30,
+    "window_sec": 120,
+    "severity": "HIGH",
+    "description": "DHCP starvation attack behavior detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "MAC Flooding Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3022,
+    "threshold": 50,
+    "window_sec": 60,
+    "severity": "HIGH",
+    "description": "Switch CAM table flooding activity detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "VLAN Hopping Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3023,
+    "threshold": 5,
+    "window_sec": 120,
+    "severity": "HIGH",
+    "description": "Potential VLAN hopping attack detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "Spanning Tree Manipulation": {
+    "rule_type": "NIDS",
+    "event_id": 3024,
+    "threshold": 5,
+    "window_sec": 120,
+    "severity": "MEDIUM",
+    "description": "Spanning Tree Protocol manipulation detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "SYN Flood Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3025,
+    "threshold": 200,
+    "window_sec": 30,
+    "severity": "CRITICAL",
+    "description": "TCP SYN flood denial-of-service attack detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "UDP Flood Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3026,
+    "threshold": 300,
+    "window_sec": 30,
+    "severity": "CRITICAL",
+    "description": "UDP flood denial-of-service attack detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "ICMP Flood Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3027,
+    "threshold": 300,
+    "window_sec": 30,
+    "severity": "CRITICAL",
+    "description": "ICMP flood attack activity detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Ping Of Death": {
+    "rule_type": "NIDS",
+    "event_id": 3028,
+    "threshold": 5,
+    "window_sec": 60,
+    "severity": "HIGH",
+    "description": "Oversized ICMP packet attack detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Smurf Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3029,
+    "threshold": 20,
+    "window_sec": 60,
+    "severity": "HIGH",
+    "description": "Smurf amplification attack behavior detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Fragmentation Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3030,
+    "threshold": 25,
+    "window_sec": 60,
+    "severity": "HIGH",
+    "description": "IP fragmentation evasion attack detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "Teardrop Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3031,
+    "threshold": 10,
+    "window_sec": 60,
+    "severity": "HIGH",
+    "description": "Teardrop fragmentation attack detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "LAND Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3032,
+    "threshold": 5,
+    "window_sec": 60,
+    "severity": "HIGH",
+    "description": "LAND attack packets detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Slowloris Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3033,
+    "threshold": 20,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Slowloris denial-of-service behavior detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "HTTP Flood Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3034,
+    "threshold": 200,
+    "window_sec": 60,
+    "severity": "CRITICAL",
+    "description": "HTTP flood attack activity detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "TLS Handshake Flood": {
+    "rule_type": "NIDS",
+    "event_id": 3035,
+    "threshold": 100,
+    "window_sec": 60,
+    "severity": "HIGH",
+    "description": "TLS handshake flood behavior detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "SSL Renegotiation Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3036,
+    "threshold": 20,
+    "window_sec": 120,
+    "severity": "HIGH",
+    "description": "SSL renegotiation denial-of-service attack detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "SSH Brute Force": {
+    "rule_type": "NIDS",
+    "event_id": 3037,
+    "threshold": 15,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "SSH brute-force login attempts detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "RDP Brute Force": {
+    "rule_type": "NIDS",
+    "event_id": 3038,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Remote Desktop brute-force activity detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "FTP Brute Force": {
+    "rule_type": "NIDS",
+    "event_id": 3039,
+    "threshold": 15,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "FTP brute-force authentication attempts detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Telnet Brute Force": {
+    "rule_type": "NIDS",
+    "event_id": 3040,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Telnet brute-force attack activity detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "SMTP Brute Force": {
+    "rule_type": "NIDS",
+    "event_id": 3041,
+    "threshold": 15,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "SMTP authentication brute-force attempts detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "POP3 Brute Force": {
+    "rule_type": "NIDS",
+    "event_id": 3042,
+    "threshold": 15,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "POP3 brute-force authentication activity detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "IMAP Brute Force": {
+    "rule_type": "NIDS",
+    "event_id": 3043,
+    "threshold": 15,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "IMAP brute-force login attempts detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "SMB Brute Force": {
+    "rule_type": "NIDS",
+    "event_id": 3044,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "SMB authentication brute-force activity detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Database Login Brute Force": {
+    "rule_type": "NIDS",
+    "event_id": 3045,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Database authentication brute-force attempts detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Kerberos Password Spraying": {
+    "rule_type": "NIDS",
+    "event_id": 3046,
+    "threshold": 20,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Kerberos password spraying attack detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "NTLM Authentication Flood": {
+    "rule_type": "NIDS",
+    "event_id": 3047,
+    "threshold": 30,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Excessive NTLM authentication attempts detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Credential Stuffing Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3048,
+    "threshold": 50,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "Credential stuffing attack traffic detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Authentication Replay Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3049,
+    "threshold": 5,
+    "window_sec": 120,
+    "severity": "HIGH",
+    "description": "Authentication replay attack behavior detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Session Hijacking Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3050,
+    "threshold": 5,
+    "window_sec": 120,
+    "severity": "HIGH",
+    "description": "Potential network session hijacking detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Reverse Shell Connection": {
+    "rule_type": "NIDS",
+    "event_id": 3051,
+    "threshold": 2,
+    "window_sec": 120,
+    "severity": "CRITICAL",
+    "description": "Reverse shell connection behavior detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Netcat Reverse Shell": {
+    "rule_type": "NIDS",
+    "event_id": 3052,
+    "threshold": 2,
+    "window_sec": 120,
+    "severity": "CRITICAL",
+    "description": "Netcat reverse shell activity detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "PowerShell C2 Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3053,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "PowerShell command-and-control traffic detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Beaconing Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3054,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Periodic beaconing traffic pattern detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Command And Control Communication": {
+    "rule_type": "NIDS",
+    "event_id": 3055,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "Potential command-and-control communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Encrypted C2 Tunnel": {
+    "rule_type": "NIDS",
+    "event_id": 3056,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "Encrypted command-and-control tunnel detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "DNS Command And Control": {
+    "rule_type": "NIDS",
+    "event_id": 3057,
+    "threshold": 20,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "DNS-based command-and-control traffic detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071.004 - DNS"
+  },
+  "HTTP Command And Control": {
+    "rule_type": "NIDS",
+    "event_id": 3058,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "HTTP-based command-and-control activity detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "HTTPS Command And Control": {
+    "rule_type": "NIDS",
+    "event_id": 3059,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "HTTPS encrypted command-and-control traffic detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "IRC Botnet Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3060,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "IRC botnet communication activity detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Tor Network Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3061,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Traffic associated with the Tor anonymity network detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1090.003 - Multi-hop Proxy"
+  },
+  "Stratum Mining Protocol": {
+    "rule_type": "NIDS",
+    "event_id": 3063,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Stratum cryptocurrency mining protocol traffic detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Malware Download Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3064,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "Potential malware payload download traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Exploit Kit Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3065,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "Exploit kit delivery traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Ransomware Network Activity": {
+    "rule_type": "NIDS",
+    "event_id": 3066,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Ransomware-associated network communication detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Worm Propagation Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3067,
+    "threshold": 20,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "Network worm propagation activity detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "Botnet Beacon": {
+    "rule_type": "NIDS",
+    "event_id": 3068,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Botnet beaconing behavior detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Suspicious JA3 Fingerprint": {
+    "rule_type": "NIDS",
+    "event_id": 3069,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Known malicious JA3 TLS fingerprint detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Suspicious TLS Fingerprint": {
+    "rule_type": "NIDS",
+    "event_id": 3070,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Suspicious TLS client fingerprint detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Self Signed Certificate Usage": {
+    "rule_type": "NIDS",
+    "event_id": 3071,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Self-signed TLS certificate usage detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "Expired Certificate Usage": {
+    "rule_type": "NIDS",
+    "event_id": 3072,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "LOW",
+    "description": "Expired TLS certificate communication detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "SSLv2 Communication": {
+    "rule_type": "NIDS",
+    "event_id": 3074,
+    "threshold": 3,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Deprecated SSLv2 protocol communication detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "SSLv3 Communication": {
+    "rule_type": "NIDS",
+    "event_id": 3075,
+    "threshold": 3,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Deprecated SSLv3 protocol communication detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "TLS Downgrade Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3076,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "TLS downgrade attack attempt detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "Domain Fronting Activity": {
+    "rule_type": "NIDS",
+    "event_id": 3077,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Potential domain fronting traffic detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Suspicious SNI Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3078,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Suspicious TLS Server Name Indication values detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Covert HTTPS Tunnel": {
+    "rule_type": "NIDS",
+    "event_id": 3079,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "Covert HTTPS tunneling activity detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "HTTP POST Exfiltration": {
+    "rule_type": "NIDS",
+    "event_id": 3080,
+    "threshold": 20,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Large-scale HTTP POST data exfiltration detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "Large Outbound Transfer": {
+    "rule_type": "NIDS",
+    "event_id": 3081,
+    "threshold": 50,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Large outbound data transfer activity detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "Data Exfiltration Over DNS": {
+    "rule_type": "NIDS",
+    "event_id": 3082,
+    "threshold": 30,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "DNS-based data exfiltration activity detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1048.001 - Exfiltration Over DNS"
+  },
+  "Data Exfiltration Over ICMP": {
+    "rule_type": "NIDS",
+    "event_id": 3083,
+    "threshold": 20,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "ICMP covert channel exfiltration detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "Compressed Archive Transfer": {
+    "rule_type": "NIDS",
+    "event_id": 3084,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Large compressed archive transfer detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "Suspicious Cloud Upload": {
+    "rule_type": "NIDS",
+    "event_id": 3085,
+    "threshold": 20,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Suspicious mass cloud upload activity detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "Unauthorized FTP Upload": {
+    "rule_type": "NIDS",
+    "event_id": 3086,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Unauthorized FTP upload activity detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1048.003 - Exfiltration Over FTP"
+  },
+  "SMB Data Staging": {
+    "rule_type": "NIDS",
+    "event_id": 3087,
+    "threshold": 15,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "SMB-based data staging activity detected.",
+    "mitre_tactic": "Collection",
+    "mitre_technique": "T1005 - Data from Local System"
+  },
+  "Lateral Movement Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3088,
+    "threshold": 15,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Lateral movement network behavior detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "Remote Service Execution": {
+    "rule_type": "NIDS",
+    "event_id": 3089,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Remote service execution traffic detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "SMB Relay Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3093,
+    "threshold": 3,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "SMB relay attack traffic detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021.002 - SMB/Windows Admin Shares"
+  },
+  "NTLM Relay Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3094,
+    "threshold": 3,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "NTLM relay attack activity detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "Pass The Hash Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3095,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "Pass-the-Hash authentication traffic detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "Kerberoasting Network Activity": {
+    "rule_type": "NIDS",
+    "event_id": 3096,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Kerberoasting-related Kerberos traffic detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "AS-REP Roasting Activity": {
+    "rule_type": "NIDS",
+    "event_id": 3097,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "AS-REP roasting attack traffic detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "BloodHound Collection Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3098,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "BloodHound Active Directory collection traffic detected.",
+    "mitre_tactic": "Discovery",
+    "mitre_technique": "T1082 - System Information Discovery"
+  },
+  "SharpHound LDAP Collection": {
+    "rule_type": "NIDS",
+    "event_id": 3099,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "SharpHound LDAP collection traffic detected.",
+    "mitre_tactic": "Discovery",
+    "mitre_technique": "T1082 - System Information Discovery"
+  },
+  "Active Directory Reconnaissance": {
+    "rule_type": "NIDS",
+    "event_id": 3100,
+    "threshold": 25,
+    "window_sec": 600,
+    "severity": "MEDIUM",
+    "description": "Large-scale Active Directory reconnaissance traffic detected.",
+    "mitre_tactic": "Discovery",
+    "mitre_technique": "T1082 - System Information Discovery"
+  },
+  "SQL Injection Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3101,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "SQL injection attack patterns detected in network traffic.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Blind SQL Injection": {
+    "rule_type": "NIDS",
+    "event_id": 3102,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Blind SQL injection behavior detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Union Based SQL Injection": {
+    "rule_type": "NIDS",
+    "event_id": 3103,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "UNION-based SQL injection attempt detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Command Injection Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3104,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "OS command injection activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Remote Code Execution Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3105,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "Remote code execution exploit traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Cross Site Scripting Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3106,
+    "threshold": 15,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Cross-site scripting payload detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Directory Traversal Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3107,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Directory traversal attack traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Local File Inclusion Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3108,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Local file inclusion attack detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Remote File Inclusion Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3109,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "Remote file inclusion exploit attempt detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Web Shell Upload Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3110,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "Potential web shell upload activity detected.",
+    "mitre_tactic": "Persistence",
+    "mitre_technique": "T1547 - Boot/Logon Autostart"
+  },
+  "PHP Web Shell Access": {
+    "rule_type": "NIDS",
+    "event_id": 3111,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "PHP web shell communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "JSP Web Shell Access": {
+    "rule_type": "NIDS",
+    "event_id": 3112,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "JSP web shell traffic detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "ASPX Web Shell Access": {
+    "rule_type": "NIDS",
+    "event_id": 3113,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "ASPX web shell communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "File Upload Exploit": {
+    "rule_type": "NIDS",
+    "event_id": 3114,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Malicious file upload attempt detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Authentication Bypass Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3115,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Authentication bypass exploit attempt detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Session Fixation Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3116,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Session fixation attack activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "CSRF Attack Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3117,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Cross-site request forgery activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "XXE Injection Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3118,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "XML External Entity injection attack detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "SSRF Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3119,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Server-side request forgery activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Deserialization Exploit": {
+    "rule_type": "NIDS",
+    "event_id": 3120,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "Unsafe deserialization exploit attempt detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Log4Shell Exploit Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3121,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "Log4Shell exploitation traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Spring4Shell Exploit Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3122,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "Spring4Shell exploitation attempt detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "ProxyShell Exploit": {
+    "rule_type": "NIDS",
+    "event_id": 3123,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "Microsoft Exchange ProxyShell exploitation detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "ProxyLogon Exploit": {
+    "rule_type": "NIDS",
+    "event_id": 3124,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "Microsoft Exchange ProxyLogon exploit traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "ZeroLogon Exploit": {
+    "rule_type": "NIDS",
+    "event_id": 3125,
+    "threshold": 3,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "ZeroLogon attack activity detected.",
+    "mitre_tactic": "Privilege Escalation",
+    "mitre_technique": "T1068 - Exploitation for Privilege Escalation"
+  },
+  "PrintNightmare Network Activity": {
+    "rule_type": "NIDS",
+    "event_id": 3126,
+    "threshold": 3,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "PrintNightmare exploitation traffic detected.",
+    "mitre_tactic": "Privilege Escalation",
+    "mitre_technique": "T1068 - Exploitation for Privilege Escalation"
+  },
+  "EternalBlue Exploit": {
+    "rule_type": "NIDS",
+    "event_id": 3127,
+    "threshold": 3,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "EternalBlue SMB exploit traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "SMBGhost Exploit": {
+    "rule_type": "NIDS",
+    "event_id": 3128,
+    "threshold": 3,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "SMBGhost exploit activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "BlueKeep Exploit": {
+    "rule_type": "NIDS",
+    "event_id": 3129,
+    "threshold": 3,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "BlueKeep RDP exploit traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Shellshock Exploit": {
+    "rule_type": "NIDS",
+    "event_id": 3130,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "Shellshock exploit attempt detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Heartbleed Exploit": {
+    "rule_type": "NIDS",
+    "event_id": 3131,
+    "threshold": 3,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Heartbleed exploit activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "FREAK Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3132,
+    "threshold": 3,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "FREAK SSL/TLS downgrade attack detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "POODLE Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3133,
+    "threshold": 3,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "POODLE SSL attack activity detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "DROWN Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3134,
+    "threshold": 3,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "DROWN SSL attack traffic detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "LDAP Injection Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3135,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "LDAP injection attack attempt detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "NoSQL Injection Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3136,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "NoSQL injection attack activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "GraphQL Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3137,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Suspicious GraphQL query abuse detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "API Abuse Detection": {
+    "rule_type": "NIDS",
+    "event_id": 3138,
+    "threshold": 25,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Abnormal API usage behavior detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "JWT Token Manipulation": {
+    "rule_type": "NIDS",
+    "event_id": 3139,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "JWT token tampering attempt detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "OAuth Abuse Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3140,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "OAuth abuse or token misuse detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Cloud Metadata Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3141,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Cloud instance metadata service abuse detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "AWS Metadata Theft": {
+    "rule_type": "NIDS",
+    "event_id": 3142,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "AWS metadata credential theft attempt detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Kubernetes API Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3143,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Suspicious Kubernetes API access detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Docker API Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3144,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Docker daemon API abuse detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Container Escape Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3145,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "Container escape-related network behavior detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "Malicious User Agent": {
+    "rule_type": "NIDS",
+    "event_id": 3146,
+    "threshold": 15,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Known malicious HTTP user-agent detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Scanner User Agent": {
+    "rule_type": "NIDS",
+    "event_id": 3147,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "LOW",
+    "description": "Vulnerability scanner user-agent traffic detected.",
+    "mitre_tactic": "Reconnaissance",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "Automated Exploitation Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3148,
+    "threshold": 15,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Automated exploitation framework traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Credential Harvesting Page": {
+    "rule_type": "NIDS",
+    "event_id": 3149,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Potential credential harvesting web traffic detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Phishing Infrastructure Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3150,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Traffic associated with phishing infrastructure detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1566 - Phishing"
+  },
+  "Modbus Unauthorized Write": {
+    "rule_type": "NIDS",
+    "event_id": 3151,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "Unauthorized Modbus write command detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Modbus Function Code Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3152,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Suspicious Modbus function code activity detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "SCADA Reconnaissance": {
+    "rule_type": "NIDS",
+    "event_id": 3153,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Industrial control system reconnaissance traffic detected.",
+    "mitre_tactic": "Discovery",
+    "mitre_technique": "T1082 - System Information Discovery"
+  },
+  "PLC Enumeration": {
+    "rule_type": "NIDS",
+    "event_id": 3154,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "PLC device enumeration activity detected.",
+    "mitre_tactic": "Discovery",
+    "mitre_technique": "T1087 - Account Discovery"
+  },
+  "DNP3 Command Injection": {
+    "rule_type": "NIDS",
+    "event_id": 3155,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "DNP3 command injection activity detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "BACnet Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3156,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Suspicious BACnet protocol activity detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "IEC104 Unauthorized Command": {
+    "rule_type": "NIDS",
+    "event_id": 3157,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "Unauthorized IEC-104 command traffic detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "OPC UA Enumeration": {
+    "rule_type": "NIDS",
+    "event_id": 3158,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "MEDIUM",
+    "description": "OPC UA server enumeration detected.",
+    "mitre_tactic": "Discovery",
+    "mitre_technique": "T1087 - Account Discovery"
+  },
+  "Industrial Protocol Scan": {
+    "rule_type": "NIDS",
+    "event_id": 3159,
+    "threshold": 20,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Industrial protocol scanning activity detected.",
+    "mitre_tactic": "Discovery",
+    "mitre_technique": "T1046 - Network Service Scanning"
+  },
+  "ICS Firmware Upload": {
+    "rule_type": "NIDS",
+    "event_id": 3160,
+    "threshold": 3,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "Unauthorized ICS firmware upload detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "MQTT Broker Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3161,
+    "threshold": 20,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Suspicious MQTT broker communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "IoT Beaconing Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3162,
+    "threshold": 20,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Periodic IoT beaconing traffic detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "IoT Botnet Communication": {
+    "rule_type": "NIDS",
+    "event_id": 3163,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "IoT botnet communication traffic detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Telnet IoT Infection": {
+    "rule_type": "NIDS",
+    "event_id": 3164,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Telnet-based IoT infection activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Mirai Botnet Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3165,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Mirai botnet communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "IoT Default Credential Access": {
+    "rule_type": "NIDS",
+    "event_id": 3166,
+    "threshold": 15,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "IoT default credential login attempts detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "CoAP Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3167,
+    "threshold": 15,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Suspicious CoAP protocol activity detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "UPnP Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3168,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "UPnP abuse or exposure detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "ZigBee Intrusion Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3169,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Suspicious ZigBee communication detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Bluetooth Reconnaissance": {
+    "rule_type": "NIDS",
+    "event_id": 3170,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Bluetooth reconnaissance activity detected.",
+    "mitre_tactic": "Discovery",
+    "mitre_technique": "T1082 - System Information Discovery"
+  },
+  "DNS Amplification Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3171,
+    "threshold": 50,
+    "window_sec": 60,
+    "severity": "CRITICAL",
+    "description": "DNS amplification attack traffic detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "NTP Amplification Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3172,
+    "threshold": 50,
+    "window_sec": 60,
+    "severity": "CRITICAL",
+    "description": "NTP amplification attack detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Memcached Amplification": {
+    "rule_type": "NIDS",
+    "event_id": 3173,
+    "threshold": 50,
+    "window_sec": 60,
+    "severity": "CRITICAL",
+    "description": "Memcached amplification attack activity detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "SNMP Amplification Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3174,
+    "threshold": 50,
+    "window_sec": 60,
+    "severity": "CRITICAL",
+    "description": "SNMP amplification traffic detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "SSDP Amplification Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3175,
+    "threshold": 50,
+    "window_sec": 60,
+    "severity": "CRITICAL",
+    "description": "SSDP amplification attack detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Reflection Attack Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3176,
+    "threshold": 50,
+    "window_sec": 60,
+    "severity": "HIGH",
+    "description": "Network reflection attack behavior detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "HTTP Smuggling Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3177,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "HTTP request smuggling attempt detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "HTTP Header Injection": {
+    "rule_type": "NIDS",
+    "event_id": 3178,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "HTTP header injection attempt detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Malformed Packet Injection": {
+    "rule_type": "NIDS",
+    "event_id": 3179,
+    "threshold": 20,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Malformed packet injection activity detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1055 - Process Injection"
+  },
+  "Protocol Tunneling": {
+    "rule_type": "NIDS",
+    "event_id": 3180,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Protocol tunneling behavior detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "ICMP Tunneling": {
+    "rule_type": "NIDS",
+    "event_id": 3181,
+    "threshold": 20,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "ICMP covert tunneling activity detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "SSH Tunneling": {
+    "rule_type": "NIDS",
+    "event_id": 3182,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "SSH tunneling behavior detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "DNS TXT Exfiltration": {
+    "rule_type": "NIDS",
+    "event_id": 3183,
+    "threshold": 25,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "DNS TXT record data exfiltration detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1048.001 - Exfiltration Over DNS"
+  },
+  "HTTP Chunked Evasion": {
+    "rule_type": "NIDS",
+    "event_id": 3184,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "HTTP chunked transfer evasion attempt detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "Suspicious Payload Entropy": {
+    "rule_type": "NIDS",
+    "event_id": 3185,
+    "threshold": 20,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "High entropy payload suggesting obfuscation or encryption detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "Binary Payload Transfer": {
+    "rule_type": "NIDS",
+    "event_id": 3186,
+    "threshold": 15,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Suspicious binary payload transfer detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "Executable Download": {
+    "rule_type": "NIDS",
+    "event_id": 3187,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Executable file download activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Macro Payload Delivery": {
+    "rule_type": "NIDS",
+    "event_id": 3188,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Office macro payload delivery traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Malicious PDF Delivery": {
+    "rule_type": "NIDS",
+    "event_id": 3189,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Malicious PDF payload delivery detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Drive By Download": {
+    "rule_type": "NIDS",
+    "event_id": 3190,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "Drive-by download attack traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Fake Software Update": {
+    "rule_type": "NIDS",
+    "event_id": 3191,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Fake software update delivery traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Watering Hole Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3192,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Potential watering hole attack traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Adversary Infrastructure Access": {
+    "rule_type": "NIDS",
+    "event_id": 3193,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Traffic to known adversary infrastructure detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Threat Intelligence Match": {
+    "rule_type": "NIDS",
+    "event_id": 3194,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Traffic matched threat intelligence indicators.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Known Malicious IP": {
+    "rule_type": "NIDS",
+    "event_id": 3195,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Connection to known malicious IP address detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Known Malicious Domain": {
+    "rule_type": "NIDS",
+    "event_id": 3196,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Communication with known malicious domain detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "GeoIP Restricted Region": {
+    "rule_type": "NIDS",
+    "event_id": 3197,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "MEDIUM",
+    "description": "Traffic to restricted geographic region detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Impossible Travel Access": {
+    "rule_type": "NIDS",
+    "event_id": 3198,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Impossible travel login pattern detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Anomalous East West Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3199,
+    "threshold": 20,
+    "window_sec": 600,
+    "severity": "MEDIUM",
+    "description": "Unusual internal east-west network traffic detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "Network Kill Chain Correlation": {
+    "rule_type": "NIDS",
+    "event_id": 3200,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Multiple correlated attack stages detected across network traffic.",
+    "mitre_tactic": "All",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "QUIC Protocol Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3201,
+    "threshold": 15,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Suspicious QUIC protocol communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "HTTP3 Covert Channel": {
+    "rule_type": "NIDS",
+    "event_id": 3202,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Potential covert channel over HTTP/3 detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Encrypted DNS Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3203,
+    "threshold": 20,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "DNS-over-HTTPS or DNS-over-TLS traffic detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071.004 - DNS"
+  },
+  "DNS Over HTTPS Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3204,
+    "threshold": 15,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Suspicious DNS-over-HTTPS communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071.004 - DNS"
+  },
+  "DNS Over TLS Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3205,
+    "threshold": 15,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Potential DNS-over-TLS abuse detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071.004 - DNS"
+  },
+  "Encrypted Payload Delivery": {
+    "rule_type": "NIDS",
+    "event_id": 3206,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Encrypted malware payload delivery traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "TLS Certificate Mismatch": {
+    "rule_type": "NIDS",
+    "event_id": 3207,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "TLS certificate mismatch activity detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "Domain Generation Algorithm": {
+    "rule_type": "NIDS",
+    "event_id": 3208,
+    "threshold": 20,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Domain Generation Algorithm communication pattern detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Fast Rotating Domains": {
+    "rule_type": "NIDS",
+    "event_id": 3209,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "MEDIUM",
+    "description": "Rapidly changing domain communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Suspicious CDN Usage": {
+    "rule_type": "NIDS",
+    "event_id": 3210,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Potential malicious use of CDN infrastructure detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Cloudflare Tunnel Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3211,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Cloudflare tunnel abuse activity detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Ngrok Tunnel Usage": {
+    "rule_type": "NIDS",
+    "event_id": 3212,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Ngrok tunneling traffic detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Reverse Proxy Tunnel": {
+    "rule_type": "NIDS",
+    "event_id": 3213,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Reverse proxy tunneling activity detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "SOCKS Proxy Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3214,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "SOCKS proxy communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "TOR Exit Node Connection": {
+    "rule_type": "NIDS",
+    "event_id": 3215,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Connection to known TOR exit node detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1090.003 - Multi-hop Proxy"
+  },
+  "VPN Abuse Detection": {
+    "rule_type": "NIDS",
+    "event_id": 3216,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Suspicious VPN usage pattern detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "WireGuard Tunnel Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3217,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "WireGuard tunneling activity detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "OpenVPN Suspicious Activity": {
+    "rule_type": "NIDS",
+    "event_id": 3218,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Suspicious OpenVPN traffic detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "SSH File Transfer Spike": {
+    "rule_type": "NIDS",
+    "event_id": 3219,
+    "threshold": 20,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Large SSH/SCP/SFTP transfer activity detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "Unusual Outbound Port": {
+    "rule_type": "NIDS",
+    "event_id": 3220,
+    "threshold": 15,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Outbound communication over unusual ports detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Rare Protocol Usage": {
+    "rule_type": "NIDS",
+    "event_id": 3221,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "LOW",
+    "description": "Rare or uncommon protocol usage detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Unexpected Protocol Switch": {
+    "rule_type": "NIDS",
+    "event_id": 3222,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Unexpected protocol switching behavior detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "Abnormal Packet Timing": {
+    "rule_type": "NIDS",
+    "event_id": 3223,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "LOW",
+    "description": "Anomalous packet timing pattern detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Traffic Burst Anomaly": {
+    "rule_type": "NIDS",
+    "event_id": 3224,
+    "threshold": 20,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Sudden abnormal traffic burst detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Idle Beacon Communication": {
+    "rule_type": "NIDS",
+    "event_id": 3225,
+    "threshold": 15,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Long idle periodic beacon communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Low And Slow Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3226,
+    "threshold": 5,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "Low-and-slow stealth attack behavior detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Steganography Transfer": {
+    "rule_type": "NIDS",
+    "event_id": 3227,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Potential steganographic file transfer detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "Image Based Payload Delivery": {
+    "rule_type": "NIDS",
+    "event_id": 3228,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Image-based malware payload delivery detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Audio Covert Channel": {
+    "rule_type": "NIDS",
+    "event_id": 3229,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "MEDIUM",
+    "description": "Potential audio covert channel activity detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "Video Stream Exfiltration": {
+    "rule_type": "NIDS",
+    "event_id": 3230,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Suspicious video-stream-based data exfiltration detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "Clipboard Sync Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3231,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Clipboard synchronization abuse detected.",
+    "mitre_tactic": "Collection",
+    "mitre_technique": "T1115 - Clipboard Data"
+  },
+  "Browser Session Theft": {
+    "rule_type": "NIDS",
+    "event_id": 3232,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Potential browser session theft activity detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1555.003 - Credentials from Browser"
+  },
+  "Cookie Theft Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3233,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Session cookie theft traffic detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "OAuth Token Theft": {
+    "rule_type": "NIDS",
+    "event_id": 3234,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "OAuth token theft activity detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "MFA Fatigue Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3235,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Multi-factor authentication fatigue attack detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Push Notification Flood": {
+    "rule_type": "NIDS",
+    "event_id": 3236,
+    "threshold": 20,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Authentication push notification flooding detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Cloud API Enumeration": {
+    "rule_type": "NIDS",
+    "event_id": 3237,
+    "threshold": 20,
+    "window_sec": 600,
+    "severity": "MEDIUM",
+    "description": "Cloud API enumeration activity detected.",
+    "mitre_tactic": "Discovery",
+    "mitre_technique": "T1087 - Account Discovery"
+  },
+  "Suspicious S3 Access": {
+    "rule_type": "NIDS",
+    "event_id": 3238,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Suspicious Amazon S3 access activity detected.",
+    "mitre_tactic": "Collection",
+    "mitre_technique": "T1005 - Data from Local System"
+  },
+  "Azure Blob Exfiltration": {
+    "rule_type": "NIDS",
+    "event_id": 3239,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Potential Azure Blob storage data exfiltration detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "GCP Storage Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3240,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Suspicious Google Cloud Storage activity detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "Kubernetes Lateral Movement": {
+    "rule_type": "NIDS",
+    "event_id": 3241,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Kubernetes lateral movement traffic detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "Container Registry Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3242,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Container registry abuse activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Malicious Container Pull": {
+    "rule_type": "NIDS",
+    "event_id": 3243,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Malicious container image pull activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Serverless Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3244,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Suspicious serverless platform activity detected.",
+    "mitre_tactic": "Execution",
+    "mitre_technique": "T1059 - Command & Scripting"
+  },
+  "Cloud Lateral Movement": {
+    "rule_type": "NIDS",
+    "event_id": 3245,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Cloud lateral movement behavior detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "Cloud Credential Exfiltration": {
+    "rule_type": "NIDS",
+    "event_id": 3246,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "Cloud credential exfiltration activity detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "AI Model Exfiltration": {
+    "rule_type": "NIDS",
+    "event_id": 3247,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "AI model or dataset exfiltration detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "Prompt Injection Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3248,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Prompt injection attack traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "LLM Abuse Activity": {
+    "rule_type": "NIDS",
+    "event_id": 3249,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "MEDIUM",
+    "description": "Suspicious large language model abuse activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Autonomous Malware Communication": {
+    "rule_type": "NIDS",
+    "event_id": 3250,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Autonomous malware network communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Deepfake Streaming Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3251,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "MEDIUM",
+    "description": "Potential deepfake media streaming activity detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "AI Generated Phishing": {
+    "rule_type": "NIDS",
+    "event_id": 3252,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "AI-generated phishing infrastructure traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1566 - Phishing"
+  },
+  "Autonomous Reconnaissance": {
+    "rule_type": "NIDS",
+    "event_id": 3253,
+    "threshold": 20,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Automated reconnaissance swarm behavior detected.",
+    "mitre_tactic": "Reconnaissance",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "Swarm Botnet Coordination": {
+    "rule_type": "NIDS",
+    "event_id": 3254,
+    "threshold": 25,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Swarm-based botnet coordination traffic detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Peer To Peer Malware": {
+    "rule_type": "NIDS",
+    "event_id": 3255,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Peer-to-peer malware communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Blockchain Based C2": {
+    "rule_type": "NIDS",
+    "event_id": 3256,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Blockchain-based command-and-control traffic detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Telegram C2 Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3257,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Telegram-based command-and-control communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Discord Malware Channel": {
+    "rule_type": "NIDS",
+    "event_id": 3258,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Discord malware communication channel detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Pastebin Payload Retrieval": {
+    "rule_type": "NIDS",
+    "event_id": 3259,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Pastebin payload retrieval activity detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "GitHub Malware Hosting": {
+    "rule_type": "NIDS",
+    "event_id": 3260,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "GitHub-hosted malware delivery traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "GitLab Payload Hosting": {
+    "rule_type": "NIDS",
+    "event_id": 3261,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "GitLab payload hosting communication detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Dropbox Exfiltration": {
+    "rule_type": "NIDS",
+    "event_id": 3262,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Dropbox-based data exfiltration activity detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "Google Drive Exfiltration": {
+    "rule_type": "NIDS",
+    "event_id": 3263,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Google Drive data exfiltration traffic detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "OneDrive Exfiltration": {
+    "rule_type": "NIDS",
+    "event_id": 3264,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "OneDrive-based exfiltration activity detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "Mega Upload Exfiltration": {
+    "rule_type": "NIDS",
+    "event_id": 3265,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Mega cloud storage exfiltration activity detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "Anonymous File Sharing": {
+    "rule_type": "NIDS",
+    "event_id": 3266,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "MEDIUM",
+    "description": "Anonymous file-sharing service usage detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "TOR Hidden Service Access": {
+    "rule_type": "NIDS",
+    "event_id": 3267,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "TOR hidden service communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1090.003 - Multi-hop Proxy"
+  },
+  "Darknet Marketplace Access": {
+    "rule_type": "NIDS",
+    "event_id": 3268,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Potential darknet marketplace access detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Credential Marketplace Access": {
+    "rule_type": "NIDS",
+    "event_id": 3269,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Access to credential marketplace infrastructure detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Bulletproof Hosting Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3270,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Traffic associated with bulletproof hosting providers detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Ransomware Negotiation Portal": {
+    "rule_type": "NIDS",
+    "event_id": 3271,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Ransomware negotiation portal communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Double Extortion Upload": {
+    "rule_type": "NIDS",
+    "event_id": 3272,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Double-extortion ransomware upload activity detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "Data Leak Site Access": {
+    "rule_type": "NIDS",
+    "event_id": 3273,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Known data leak site communication detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "Financial Fraud Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3274,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Financial fraud-related traffic detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Banking Trojan Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3275,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Banking trojan communication detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "POS Malware Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3276,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Point-of-sale malware communication detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "ATM Malware Communication": {
+    "rule_type": "NIDS",
+    "event_id": 3277,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "ATM malware traffic detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "SWIFT Fraud Activity": {
+    "rule_type": "NIDS",
+    "event_id": 3278,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Suspicious SWIFT transaction network activity detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Healthcare Data Exfiltration": {
+    "rule_type": "NIDS",
+    "event_id": 3279,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Healthcare data exfiltration activity detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "HIPAA Sensitive Transfer": {
+    "rule_type": "NIDS",
+    "event_id": 3280,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Sensitive healthcare information transfer detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "Industrial Espionage Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3281,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Industrial espionage communication detected.",
+    "mitre_tactic": "Collection",
+    "mitre_technique": "T1005 - Data from Local System"
+  },
+  "Nation State Infrastructure": {
+    "rule_type": "NIDS",
+    "event_id": 3282,
+    "threshold": 5,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Traffic linked to nation-state infrastructure detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "APT Lateral Movement": {
+    "rule_type": "NIDS",
+    "event_id": 3283,
+    "threshold": 15,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Advanced persistent threat lateral movement detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "APT Data Staging": {
+    "rule_type": "NIDS",
+    "event_id": 3284,
+    "threshold": 15,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "APT data staging activity detected.",
+    "mitre_tactic": "Collection",
+    "mitre_technique": "T1005 - Data from Local System"
+  },
+  "Long Term Beaconing": {
+    "rule_type": "NIDS",
+    "event_id": 3285,
+    "threshold": 25,
+    "window_sec": 7200,
+    "severity": "CRITICAL",
+    "description": "Long-term persistent beaconing communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Stealth Exfiltration": {
+    "rule_type": "NIDS",
+    "event_id": 3286,
+    "threshold": 10,
+    "window_sec": 1800,
+    "severity": "CRITICAL",
+    "description": "Stealthy low-volume exfiltration activity detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "Advanced Evasion Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3287,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Advanced network evasion technique detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "Polymorphic Malware Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3288,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Polymorphic malware communication detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "Metamorphic Payload Delivery": {
+    "rule_type": "NIDS",
+    "event_id": 3289,
+    "threshold": 5,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Metamorphic malware payload delivery detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "Fileless Malware Network Activity": {
+    "rule_type": "NIDS",
+    "event_id": 3290,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Fileless malware network behavior detected.",
+    "mitre_tactic": "Execution",
+    "mitre_technique": "T1059 - Command & Scripting"
+  },
+  "Memory Resident Malware Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3291,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Memory-resident malware communication detected.",
+    "mitre_tactic": "Execution",
+    "mitre_technique": "T1059 - Command & Scripting"
+  },
+  "Zero Day Exploit Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3292,
+    "threshold": 5,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Potential zero-day exploit traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Unknown Protocol Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3293,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Unknown or malformed protocol abuse detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "Custom Encryption Protocol": {
+    "rule_type": "NIDS",
+    "event_id": 3294,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Custom encrypted protocol communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Payload Obfuscation Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3295,
+    "threshold": 15,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Payload obfuscation network behavior detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "Stealth Reconnaissance": {
+    "rule_type": "NIDS",
+    "event_id": 3296,
+    "threshold": 10,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "Stealth reconnaissance activity detected.",
+    "mitre_tactic": "Reconnaissance",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "Red Team Simulation Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3297,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "MEDIUM",
+    "description": "Red team or adversary simulation traffic detected.",
+    "mitre_tactic": "Reconnaissance",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "Purple Team Exercise": {
+    "rule_type": "NIDS",
+    "event_id": 3298,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "LOW",
+    "description": "Purple team exercise traffic detected.",
+    "mitre_tactic": "Reconnaissance",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "Cyber Kill Chain Completion": {
+    "rule_type": "NIDS",
+    "event_id": 3299,
+    "threshold": 15,
+    "window_sec": 1800,
+    "severity": "CRITICAL",
+    "description": "Complete cyber kill chain sequence detected.",
+    "mitre_tactic": "All",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "Enterprise Wide Attack Correlation": {
+    "rule_type": "NIDS",
+    "event_id": 3300,
+    "threshold": 20,
+    "window_sec": 3600,
+    "severity": "CRITICAL",
+    "description": "Enterprise-wide correlated attack campaign detected.",
+    "mitre_tactic": "All",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "Mimikatz Network Activity": {
+    "rule_type": "NIDS",
+    "event_id": 3301,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Network activity associated with Mimikatz detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Cobalt Strike Beacon": {
+    "rule_type": "NIDS",
+    "event_id": 3302,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Cobalt Strike beacon communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Sliver C2 Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3303,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Sliver command-and-control traffic detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Mythic C2 Communication": {
+    "rule_type": "NIDS",
+    "event_id": 3304,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Mythic C2 framework communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Empire Framework Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3305,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "PowerShell Empire framework traffic detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Metasploit Payload Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3306,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Metasploit payload communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Meterpreter Session": {
+    "rule_type": "NIDS",
+    "event_id": 3307,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Meterpreter reverse shell session detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Pupy RAT Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3308,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Pupy RAT communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Quasar RAT Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3309,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Quasar RAT network traffic detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "NjRAT Communication": {
+    "rule_type": "NIDS",
+    "event_id": 3310,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "NjRAT command-and-control communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "DarkComet RAT Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3311,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "DarkComet RAT communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "AgentTesla Exfiltration": {
+    "rule_type": "NIDS",
+    "event_id": 3312,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "AgentTesla credential exfiltration traffic detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "RedLine Stealer Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3313,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "RedLine stealer communication detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Lumma Stealer Activity": {
+    "rule_type": "NIDS",
+    "event_id": 3314,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Lumma stealer network activity detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Vidar Stealer Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3315,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Vidar stealer communication detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Raccoon Stealer Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3316,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Raccoon stealer traffic detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Emotet Communication": {
+    "rule_type": "NIDS",
+    "event_id": 3317,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Emotet malware communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "TrickBot Activity": {
+    "rule_type": "NIDS",
+    "event_id": 3318,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "TrickBot malware network activity detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "QakBot Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3319,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "QakBot command-and-control traffic detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "IcedID Communication": {
+    "rule_type": "NIDS",
+    "event_id": 3320,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "IcedID malware communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Dridex Banking Malware": {
+    "rule_type": "NIDS",
+    "event_id": 3321,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Dridex banking malware traffic detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Zeus Banking Trojan": {
+    "rule_type": "NIDS",
+    "event_id": 3322,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Zeus banking trojan communication detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Gozi ISFB Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3323,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Gozi ISFB malware traffic detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Ursnif Malware Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3324,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Ursnif malware communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Lokibot Credential Theft": {
+    "rule_type": "NIDS",
+    "event_id": 3325,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Lokibot credential theft traffic detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "AsyncRAT Communication": {
+    "rule_type": "NIDS",
+    "event_id": 3326,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "AsyncRAT command-and-control communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "NanoCore RAT Activity": {
+    "rule_type": "NIDS",
+    "event_id": 3327,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "NanoCore RAT traffic detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Remcos RAT Communication": {
+    "rule_type": "NIDS",
+    "event_id": 3328,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Remcos RAT network communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "BlackMatter Ransomware": {
+    "rule_type": "NIDS",
+    "event_id": 3329,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "BlackMatter ransomware network activity detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "LockBit Ransomware": {
+    "rule_type": "NIDS",
+    "event_id": 3330,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "LockBit ransomware communication detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "BlackCat ALPHV Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3331,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "BlackCat/ALPHV ransomware traffic detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Conti Ransomware Activity": {
+    "rule_type": "NIDS",
+    "event_id": 3332,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Conti ransomware network activity detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Ryuk Ransomware Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3333,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Ryuk ransomware communication detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Maze Ransomware Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3334,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Maze ransomware network traffic detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Hive Ransomware Activity": {
+    "rule_type": "NIDS",
+    "event_id": 3335,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Hive ransomware communication detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Royal Ransomware Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3336,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Royal ransomware activity detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Clop Ransomware Communication": {
+    "rule_type": "NIDS",
+    "event_id": 3337,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Clop ransomware network communication detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Babuk Ransomware Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3338,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Babuk ransomware communication detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "WannaCry Propagation": {
+    "rule_type": "NIDS",
+    "event_id": 3339,
+    "threshold": 20,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "WannaCry worm propagation traffic detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "NotPetya Propagation": {
+    "rule_type": "NIDS",
+    "event_id": 3340,
+    "threshold": 20,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "NotPetya propagation activity detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "Petya Malware Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3341,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Petya ransomware communication detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Stuxnet Style Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3342,
+    "threshold": 5,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Stuxnet-style industrial malware traffic detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Flame Malware Communication": {
+    "rule_type": "NIDS",
+    "event_id": 3343,
+    "threshold": 5,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Flame malware communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Duqu Malware Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3344,
+    "threshold": 5,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Duqu malware network traffic detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "APT Malware Family Correlation": {
+    "rule_type": "NIDS",
+    "event_id": 3345,
+    "threshold": 15,
+    "window_sec": 1800,
+    "severity": "CRITICAL",
+    "description": "APT malware family communication correlation detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Multi Stage Payload Delivery": {
+    "rule_type": "NIDS",
+    "event_id": 3346,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Multi-stage malware payload delivery detected.",
+    "mitre_tactic": "Execution",
+    "mitre_technique": "T1059 - Command & Scripting"
+  },
+  "Malware Sandbox Evasion": {
+    "rule_type": "NIDS",
+    "event_id": 3347,
+    "threshold": 5,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Malware sandbox evasion traffic detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "Payload Sleep Obfuscation": {
+    "rule_type": "NIDS",
+    "event_id": 3348,
+    "threshold": 10,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "Payload sleep obfuscation behavior detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "Multi Vector Malware Campaign": {
+    "rule_type": "NIDS",
+    "event_id": 3349,
+    "threshold": 20,
+    "window_sec": 1800,
+    "severity": "CRITICAL",
+    "description": "Multi-vector malware campaign activity detected.",
+    "mitre_tactic": "Execution",
+    "mitre_technique": "T1059 - Command & Scripting"
+  },
+  "Global Threat Correlation": {
+    "rule_type": "NIDS",
+    "event_id": 3350,
+    "threshold": 25,
+    "window_sec": 3600,
+    "severity": "CRITICAL",
+    "description": "Global threat intelligence correlation match detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "IPv6 Reconnaissance": {
+    "rule_type": "NIDS",
+    "event_id": 3351,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "MEDIUM",
+    "description": "IPv6 reconnaissance activity detected.",
+    "mitre_tactic": "Reconnaissance",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "IPv6 Neighbor Discovery Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3352,
+    "threshold": 10,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "IPv6 Neighbor Discovery spoofing or abuse detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "Rogue IPv6 Router Advertisement": {
+    "rule_type": "NIDS",
+    "event_id": 3353,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Unauthorized IPv6 router advertisement detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "IPv6 Tunneling Activity": {
+    "rule_type": "NIDS",
+    "event_id": 3354,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "MEDIUM",
+    "description": "IPv6 tunneling protocol activity detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Teredo Tunnel Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3355,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "MEDIUM",
+    "description": "Teredo tunneling abuse detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "6to4 Tunnel Activity": {
+    "rule_type": "NIDS",
+    "event_id": 3356,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "LOW",
+    "description": "6to4 tunneling communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "GRE Tunnel Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3357,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "GRE tunneling abuse activity detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "VXLAN Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3358,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "MEDIUM",
+    "description": "Suspicious VXLAN encapsulation traffic detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "MPLS Manipulation": {
+    "rule_type": "NIDS",
+    "event_id": 3359,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Potential MPLS manipulation activity detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "BGP Hijacking Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3360,
+    "threshold": 3,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Potential BGP hijacking activity detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "OSPF Route Injection": {
+    "rule_type": "NIDS",
+    "event_id": 3361,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "OSPF route injection attempt detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "RIP Route Poisoning": {
+    "rule_type": "NIDS",
+    "event_id": 3362,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "MEDIUM",
+    "description": "RIP route poisoning activity detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "SNMP Enumeration": {
+    "rule_type": "NIDS",
+    "event_id": 3363,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "MEDIUM",
+    "description": "SNMP enumeration activity detected.",
+    "mitre_tactic": "Discovery",
+    "mitre_technique": "T1087 - Account Discovery"
+  },
+  "SNMP Community String Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3364,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Suspicious SNMP community string usage detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Network Device Configuration Theft": {
+    "rule_type": "NIDS",
+    "event_id": 3365,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Network device configuration extraction detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Firewall Rule Enumeration": {
+    "rule_type": "NIDS",
+    "event_id": 3366,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "LOW",
+    "description": "Firewall rule enumeration activity detected.",
+    "mitre_tactic": "Discovery",
+    "mitre_technique": "T1087 - Account Discovery"
+  },
+  "Router Login Brute Force": {
+    "rule_type": "NIDS",
+    "event_id": 3367,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Router management login brute-force attempts detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Switch Management Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3368,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "MEDIUM",
+    "description": "Suspicious switch management activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Unauthorized NAC Bypass": {
+    "rule_type": "NIDS",
+    "event_id": 3369,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Network Access Control bypass attempt detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "Rogue Access Point": {
+    "rule_type": "NIDS",
+    "event_id": 3370,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Rogue wireless access point detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "WiFi Deauthentication Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3371,
+    "threshold": 20,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Wireless deauthentication attack detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Evil Twin Access Point": {
+    "rule_type": "NIDS",
+    "event_id": 3372,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Potential Evil Twin wireless access point detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "WPA Handshake Capture": {
+    "rule_type": "NIDS",
+    "event_id": 3373,
+    "threshold": 10,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Wireless WPA handshake capture activity detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Wireless Packet Injection": {
+    "rule_type": "NIDS",
+    "event_id": 3374,
+    "threshold": 15,
+    "window_sec": 300,
+    "severity": "HIGH",
+    "description": "Wireless packet injection attack detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1055 - Process Injection"
+  },
+  "Bluetooth Low Energy Scan": {
+    "rule_type": "NIDS",
+    "event_id": 3375,
+    "threshold": 15,
+    "window_sec": 600,
+    "severity": "LOW",
+    "description": "Bluetooth Low Energy scanning activity detected.",
+    "mitre_tactic": "Discovery",
+    "mitre_technique": "T1046 - Network Service Scanning"
+  },
+  "ZWave Network Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3376,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "MEDIUM",
+    "description": "Suspicious Z-Wave protocol activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "RF Signal Manipulation": {
+    "rule_type": "NIDS",
+    "event_id": 3377,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Potential radio frequency manipulation detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Satellite Link Intrusion": {
+    "rule_type": "NIDS",
+    "event_id": 3378,
+    "threshold": 3,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Satellite communication intrusion attempt detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Drone Command Hijacking": {
+    "rule_type": "NIDS",
+    "event_id": 3379,
+    "threshold": 3,
+    "window_sec": 600,
+    "severity": "CRITICAL",
+    "description": "Drone command hijacking traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Vehicle CAN Bus Injection": {
+    "rule_type": "NIDS",
+    "event_id": 3380,
+    "threshold": 5,
+    "window_sec": 300,
+    "severity": "CRITICAL",
+    "description": "CAN bus packet injection activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Smart Grid Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3381,
+    "threshold": 5,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Smart grid infrastructure attack traffic detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Medical Device Exploitation": {
+    "rule_type": "NIDS",
+    "event_id": 3382,
+    "threshold": 5,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Medical device exploitation attempt detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Industrial Safety Override": {
+    "rule_type": "NIDS",
+    "event_id": 3383,
+    "threshold": 3,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Industrial safety override communication detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "ICS Kill Switch Activation": {
+    "rule_type": "NIDS",
+    "event_id": 3384,
+    "threshold": 3,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "ICS kill switch command activity detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Physical Security System Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3385,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Physical security system abuse detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Badge Access System Intrusion": {
+    "rule_type": "NIDS",
+    "event_id": 3386,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Badge access system intrusion activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "CCTV Feed Manipulation": {
+    "rule_type": "NIDS",
+    "event_id": 3387,
+    "threshold": 3,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "CCTV stream manipulation traffic detected.",
+    "mitre_tactic": "Collection",
+    "mitre_technique": "T1005 - Data from Local System"
+  },
+  "Biometric Authentication Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3388,
+    "threshold": 5,
+    "window_sec": 600,
+    "severity": "HIGH",
+    "description": "Biometric authentication abuse detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Supply Chain Malware Delivery": {
+    "rule_type": "NIDS",
+    "event_id": 3389,
+    "threshold": 5,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Supply-chain malware delivery activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Software Update Poisoning": {
+    "rule_type": "NIDS",
+    "event_id": 3390,
+    "threshold": 5,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Software update poisoning attack detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Dependency Repository Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3391,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Dependency repository abuse detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "CI CD Pipeline Compromise": {
+    "rule_type": "NIDS",
+    "event_id": 3392,
+    "threshold": 5,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "CI/CD pipeline compromise activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Source Code Exfiltration": {
+    "rule_type": "NIDS",
+    "event_id": 3393,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Source code exfiltration traffic detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "Developer Credential Theft": {
+    "rule_type": "NIDS",
+    "event_id": 3394,
+    "threshold": 5,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Developer credential theft activity detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Build Server Intrusion": {
+    "rule_type": "NIDS",
+    "event_id": 3395,
+    "threshold": 5,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Build server intrusion attempt detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Package Manager Poisoning": {
+    "rule_type": "NIDS",
+    "event_id": 3396,
+    "threshold": 5,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Package manager poisoning activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Nation State Campaign Correlation": {
+    "rule_type": "NIDS",
+    "event_id": 3397,
+    "threshold": 20,
+    "window_sec": 3600,
+    "severity": "CRITICAL",
+    "description": "Nation-state campaign correlation detected.",
+    "mitre_tactic": "All",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "Multi Region Attack Synchronization": {
+    "rule_type": "NIDS",
+    "event_id": 3398,
+    "threshold": 25,
+    "window_sec": 3600,
+    "severity": "CRITICAL",
+    "description": "Multi-region synchronized attack activity detected.",
+    "mitre_tactic": "All",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "Global Infrastructure Compromise": {
+    "rule_type": "NIDS",
+    "event_id": 3399,
+    "threshold": 30,
+    "window_sec": 3600,
+    "severity": "CRITICAL",
+    "description": "Global infrastructure compromise indicators detected.",
+    "mitre_tactic": "All",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "SMTP Phishing Campaign": {
+    "rule_type": "NIDS",
+    "event_id": 3401,
+    "threshold": 25,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "Mass phishing email campaign traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1566 - Phishing"
+  },
+  "Suspicious SMTP Attachment": {
+    "rule_type": "NIDS",
+    "event_id": 3402,
+    "threshold": 15,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Suspicious email attachment delivery detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Macro Enabled Document Delivery": {
+    "rule_type": "NIDS",
+    "event_id": 3403,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Macro-enabled Office document delivery detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Malicious Email Link": {
+    "rule_type": "NIDS",
+    "event_id": 3404,
+    "threshold": 20,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Email containing malicious links detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Business Email Compromise": {
+    "rule_type": "NIDS",
+    "event_id": 3405,
+    "threshold": 5,
+    "window_sec": 1800,
+    "severity": "CRITICAL",
+    "description": "Business email compromise activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Spoofed Email Sender": {
+    "rule_type": "NIDS",
+    "event_id": 3406,
+    "threshold": 15,
+    "window_sec": 900,
+    "severity": "MEDIUM",
+    "description": "Spoofed sender email activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "DMARC Failure Burst": {
+    "rule_type": "NIDS",
+    "event_id": 3407,
+    "threshold": 25,
+    "window_sec": 900,
+    "severity": "LOW",
+    "description": "Large number of DMARC validation failures detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "SPF Validation Failure": {
+    "rule_type": "NIDS",
+    "event_id": 3408,
+    "threshold": 25,
+    "window_sec": 900,
+    "severity": "LOW",
+    "description": "SPF validation failure activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "DKIM Signature Failure": {
+    "rule_type": "NIDS",
+    "event_id": 3409,
+    "threshold": 25,
+    "window_sec": 900,
+    "severity": "LOW",
+    "description": "DKIM signature validation failures detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Credential Phishing Redirect": {
+    "rule_type": "NIDS",
+    "event_id": 3410,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Credential phishing redirect traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1566 - Phishing"
+  },
+  "Fake Login Portal Access": {
+    "rule_type": "NIDS",
+    "event_id": 3411,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Fake login portal access detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "OAuth Consent Phishing": {
+    "rule_type": "NIDS",
+    "event_id": 3412,
+    "threshold": 5,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "OAuth consent phishing activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1566 - Phishing"
+  },
+  "Malvertising Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3413,
+    "threshold": 15,
+    "window_sec": 900,
+    "severity": "MEDIUM",
+    "description": "Malvertising campaign traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Browser Exploit Kit": {
+    "rule_type": "NIDS",
+    "event_id": 3414,
+    "threshold": 5,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Browser exploit kit traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Fake Browser Update": {
+    "rule_type": "NIDS",
+    "event_id": 3415,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Fake browser update delivery detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "JavaScript Obfuscation Payload": {
+    "rule_type": "NIDS",
+    "event_id": 3416,
+    "threshold": 20,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Obfuscated JavaScript payload delivery detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Drive By Cryptomining": {
+    "rule_type": "NIDS",
+    "event_id": 3417,
+    "threshold": 15,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Browser-based cryptomining activity detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1496 - Resource Hijacking"
+  },
+  "Cryptocurrency Mining Pool": {
+    "rule_type": "NIDS",
+    "event_id": 3418,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Connection to cryptocurrency mining pool detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1496 - Resource Hijacking"
+  },
+  "Unauthorized GPU Mining": {
+    "rule_type": "NIDS",
+    "event_id": 3419,
+    "threshold": 10,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "Unauthorized GPU mining communication detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Mining Malware Beacon": {
+    "rule_type": "NIDS",
+    "event_id": 3420,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Cryptomining malware beacon traffic detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Kerberos Ticket Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3421,
+    "threshold": 15,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Suspicious Kerberos ticket activity detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Kerberos Golden Ticket": {
+    "rule_type": "NIDS",
+    "event_id": 3422,
+    "threshold": 5,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Golden Ticket authentication activity detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "Kerberos Silver Ticket": {
+    "rule_type": "NIDS",
+    "event_id": 3423,
+    "threshold": 5,
+    "window_sec": 900,
+    "severity": "CRITICAL",
+    "description": "Silver Ticket attack activity detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "Kerberoasting Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3424,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Kerberoasting activity detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "ASREP Roasting Activity": {
+    "rule_type": "NIDS",
+    "event_id": 3425,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "AS-REP roasting traffic detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "LDAP Enumeration Burst": {
+    "rule_type": "NIDS",
+    "event_id": 3426,
+    "threshold": 20,
+    "window_sec": 900,
+    "severity": "MEDIUM",
+    "description": "Large-scale LDAP enumeration detected.",
+    "mitre_tactic": "Discovery",
+    "mitre_technique": "T1087 - Account Discovery"
+  },
+  "BloodHound Data Collection": {
+    "rule_type": "NIDS",
+    "event_id": 3427,
+    "threshold": 15,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "BloodHound-style Active Directory collection detected.",
+    "mitre_tactic": "Discovery",
+    "mitre_technique": "T1082 - System Information Discovery"
+  },
+  "SharpHound Enumeration": {
+    "rule_type": "NIDS",
+    "event_id": 3428,
+    "threshold": 15,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "SharpHound Active Directory enumeration detected.",
+    "mitre_tactic": "Discovery",
+    "mitre_technique": "T1087 - Account Discovery"
+  },
+  "Domain Trust Enumeration": {
+    "rule_type": "NIDS",
+    "event_id": 3429,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "MEDIUM",
+    "description": "Domain trust enumeration activity detected.",
+    "mitre_tactic": "Discovery",
+    "mitre_technique": "T1087 - Account Discovery"
+  },
+  "Password Spraying Network Pattern": {
+    "rule_type": "NIDS",
+    "event_id": 3430,
+    "threshold": 30,
+    "window_sec": 1800,
+    "severity": "CRITICAL",
+    "description": "Password spraying attack traffic pattern detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Credential Stuffing Network Pattern": {
+    "rule_type": "NIDS",
+    "event_id": 3431,
+    "threshold": 30,
+    "window_sec": 1800,
+    "severity": "CRITICAL",
+    "description": "Credential stuffing traffic pattern detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Brute Force Authentication Flood": {
+    "rule_type": "NIDS",
+    "event_id": 3432,
+    "threshold": 50,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Authentication brute-force traffic detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Multi Protocol Reconnaissance": {
+    "rule_type": "NIDS",
+    "event_id": 3433,
+    "threshold": 40,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "Reconnaissance across multiple protocols detected.",
+    "mitre_tactic": "Reconnaissance",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "Network Mapping Activity": {
+    "rule_type": "NIDS",
+    "event_id": 3434,
+    "threshold": 25,
+    "window_sec": 1800,
+    "severity": "MEDIUM",
+    "description": "Comprehensive network mapping activity detected.",
+    "mitre_tactic": "Discovery",
+    "mitre_technique": "T1082 - System Information Discovery"
+  },
+  "Internal Pivoting Activity": {
+    "rule_type": "NIDS",
+    "event_id": 3435,
+    "threshold": 20,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "Internal pivoting network behavior detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "Lateral Tool Transfer": {
+    "rule_type": "NIDS",
+    "event_id": 3436,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Lateral movement tool transfer detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "Remote Administration Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3437,
+    "threshold": 15,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Unauthorized remote administration activity detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "PsExec Network Activity": {
+    "rule_type": "NIDS",
+    "event_id": 3438,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "PsExec lateral movement traffic detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1569.002 - Service Execution"
+  },
+  "WMI Remote Execution": {
+    "rule_type": "NIDS",
+    "event_id": 3439,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "WMI remote execution traffic detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021.003 - Distributed Component Object Model"
+  },
+  "SMB Lateral Movement": {
+    "rule_type": "NIDS",
+    "event_id": 3440,
+    "threshold": 15,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "SMB-based lateral movement detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021.002 - SMB/Windows Admin Shares"
+  },
+  "RDP Hijacking Attempt": {
+    "rule_type": "NIDS",
+    "event_id": 3441,
+    "threshold": 5,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Potential RDP session hijacking detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021.001 - Remote Desktop Protocol"
+  },
+  "WinRM Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3442,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "WinRM abuse activity detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "Remote PowerShell Session": {
+    "rule_type": "NIDS",
+    "event_id": 3443,
+    "threshold": 10,
+    "window_sec": 900,
+    "severity": "HIGH",
+    "description": "Remote PowerShell session traffic detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "Admin Share Traversal": {
+    "rule_type": "NIDS",
+    "event_id": 3444,
+    "threshold": 15,
+    "window_sec": 900,
+    "severity": "MEDIUM",
+    "description": "Administrative share traversal activity detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "Lateral Credential Reuse": {
+    "rule_type": "NIDS",
+    "event_id": 3445,
+    "threshold": 10,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "Credential reuse across systems detected.",
+    "mitre_tactic": "Lateral Movement",
+    "mitre_technique": "T1021 - Remote Services"
+  },
+  "Privilege Escalation Correlation": {
+    "rule_type": "NIDS",
+    "event_id": 3446,
+    "threshold": 10,
+    "window_sec": 1800,
+    "severity": "CRITICAL",
+    "description": "Privilege escalation network correlation detected.",
+    "mitre_tactic": "Privilege Escalation",
+    "mitre_technique": "T1068 - Exploitation for Privilege Escalation"
+  },
+  "Enterprise Domain Compromise": {
+    "rule_type": "NIDS",
+    "event_id": 3447,
+    "threshold": 20,
+    "window_sec": 3600,
+    "severity": "CRITICAL",
+    "description": "Enterprise domain compromise indicators detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Advanced Persistent Beacon": {
+    "rule_type": "NIDS",
+    "event_id": 3448,
+    "threshold": 25,
+    "window_sec": 7200,
+    "severity": "CRITICAL",
+    "description": "Advanced persistent beacon communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Coordinated Multi Stage Intrusion": {
+    "rule_type": "NIDS",
+    "event_id": 3449,
+    "threshold": 30,
+    "window_sec": 7200,
+    "severity": "CRITICAL",
+    "description": "Coordinated multi-stage intrusion activity detected.",
+    "mitre_tactic": "All",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "Enterprise Attack Campaign": {
+    "rule_type": "NIDS",
+    "event_id": 3450,
+    "threshold": 40,
+    "window_sec": 10800,
+    "severity": "CRITICAL",
+    "description": "Enterprise-scale attack campaign detected.",
+    "mitre_tactic": "All",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "DNS Fast Flux Network": {
+    "rule_type": "NIDS",
+    "event_id": 3451,
+    "threshold": 20,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "Fast-flux DNS infrastructure activity detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071.004 - DNS"
+  },
+  "Dynamic DNS Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3452,
+    "threshold": 15,
+    "window_sec": 1800,
+    "severity": "MEDIUM",
+    "description": "Suspicious dynamic DNS usage detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071.004 - DNS"
+  },
+  "Typosquatting Domain Access": {
+    "rule_type": "NIDS",
+    "event_id": 3453,
+    "threshold": 10,
+    "window_sec": 1800,
+    "severity": "MEDIUM",
+    "description": "Typosquatting domain communication detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Homograph Domain Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3454,
+    "threshold": 5,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "Homograph phishing domain access detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Suspicious Newly Registered Domain": {
+    "rule_type": "NIDS",
+    "event_id": 3455,
+    "threshold": 10,
+    "window_sec": 1800,
+    "severity": "MEDIUM",
+    "description": "Traffic to newly registered domains detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Parked Domain Malware Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3456,
+    "threshold": 10,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "Malware communication with parked domains detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "DNS TXT Command Channel": {
+    "rule_type": "NIDS",
+    "event_id": 3457,
+    "threshold": 15,
+    "window_sec": 1800,
+    "severity": "CRITICAL",
+    "description": "DNS TXT record command channel detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071.004 - DNS"
+  },
+  "Suspicious MX Lookup": {
+    "rule_type": "NIDS",
+    "event_id": 3458,
+    "threshold": 15,
+    "window_sec": 1800,
+    "severity": "LOW",
+    "description": "Suspicious MX record lookup activity detected.",
+    "mitre_tactic": "Discovery",
+    "mitre_technique": "T1082 - System Information Discovery"
+  },
+  "DNS Wildcard Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3459,
+    "threshold": 10,
+    "window_sec": 1800,
+    "severity": "MEDIUM",
+    "description": "Wildcard DNS abuse detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071.004 - DNS"
+  },
+  "DNS Rebinding Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3460,
+    "threshold": 5,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "DNS rebinding attack activity detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "TLS Fingerprint Anomaly": {
+    "rule_type": "NIDS",
+    "event_id": 3461,
+    "threshold": 15,
+    "window_sec": 1800,
+    "severity": "MEDIUM",
+    "description": "Anomalous TLS fingerprint detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "JA3 Malware Fingerprint": {
+    "rule_type": "NIDS",
+    "event_id": 3462,
+    "threshold": 10,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "Known malicious JA3 TLS fingerprint detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Self Signed Certificate Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3463,
+    "threshold": 15,
+    "window_sec": 1800,
+    "severity": "MEDIUM",
+    "description": "Suspicious self-signed certificate usage detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "Expired Certificate Communication": {
+    "rule_type": "NIDS",
+    "event_id": 3464,
+    "threshold": 10,
+    "window_sec": 1800,
+    "severity": "LOW",
+    "description": "Communication using expired certificates detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "Certificate Pinning Evasion": {
+    "rule_type": "NIDS",
+    "event_id": 3465,
+    "threshold": 5,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "Certificate pinning evasion behavior detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "TLS Downgrade Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3466,
+    "threshold": 5,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "TLS downgrade attack activity detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "Weak Cipher Suite Usage": {
+    "rule_type": "NIDS",
+    "event_id": 3467,
+    "threshold": 20,
+    "window_sec": 1800,
+    "severity": "LOW",
+    "description": "Weak TLS cipher suite usage detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "SSL Renegotiation Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3468,
+    "threshold": 10,
+    "window_sec": 1800,
+    "severity": "MEDIUM",
+    "description": "SSL renegotiation abuse detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "Encrypted Malware Staging": {
+    "rule_type": "NIDS",
+    "event_id": 3469,
+    "threshold": 10,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "Encrypted malware staging activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Stealth HTTPS Beacon": {
+    "rule_type": "NIDS",
+    "event_id": 3470,
+    "threshold": 20,
+    "window_sec": 3600,
+    "severity": "CRITICAL",
+    "description": "Stealth HTTPS beacon communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "WebSocket C2 Channel": {
+    "rule_type": "NIDS",
+    "event_id": 3471,
+    "threshold": 10,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "WebSocket-based command-and-control channel detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "HTTP2 Covert Channel": {
+    "rule_type": "NIDS",
+    "event_id": 3472,
+    "threshold": 10,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "HTTP/2 covert communication channel detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Chunked Transfer Exfiltration": {
+    "rule_type": "NIDS",
+    "event_id": 3473,
+    "threshold": 10,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "Chunked transfer encoding exfiltration detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "Multipart Payload Smuggling": {
+    "rule_type": "NIDS",
+    "event_id": 3474,
+    "threshold": 5,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "Multipart payload smuggling activity detected.",
+    "mitre_tactic": "Defense Evasion",
+    "mitre_technique": "T1562 - Impair Defenses"
+  },
+  "Suspicious API Token Reuse": {
+    "rule_type": "NIDS",
+    "event_id": 3475,
+    "threshold": 15,
+    "window_sec": 1800,
+    "severity": "MEDIUM",
+    "description": "Suspicious API token reuse detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Bearer Token Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3476,
+    "threshold": 10,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "Bearer token abuse activity detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Session Replay Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3477,
+    "threshold": 10,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "Session replay attack behavior detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "CAPTCHA Bypass Automation": {
+    "rule_type": "NIDS",
+    "event_id": 3478,
+    "threshold": 25,
+    "window_sec": 1800,
+    "severity": "MEDIUM",
+    "description": "CAPTCHA bypass automation traffic detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Bot Automation Framework": {
+    "rule_type": "NIDS",
+    "event_id": 3479,
+    "threshold": 20,
+    "window_sec": 1800,
+    "severity": "MEDIUM",
+    "description": "Bot automation framework traffic detected.",
+    "mitre_tactic": "Execution",
+    "mitre_technique": "T1059 - Command & Scripting"
+  },
+  "Headless Browser Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3480,
+    "threshold": 15,
+    "window_sec": 1800,
+    "severity": "MEDIUM",
+    "description": "Headless browser abuse activity detected.",
+    "mitre_tactic": "Execution",
+    "mitre_technique": "T1059 - Command & Scripting"
+  },
+  "Credential Validation Service": {
+    "rule_type": "NIDS",
+    "event_id": 3481,
+    "threshold": 20,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "Credential validation service traffic detected.",
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "T1003 - OS Credential Dumping"
+  },
+  "Fraudulent Transaction Pattern": {
+    "rule_type": "NIDS",
+    "event_id": 3482,
+    "threshold": 10,
+    "window_sec": 1800,
+    "severity": "CRITICAL",
+    "description": "Fraudulent transaction network pattern detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Payment Gateway Abuse": {
+    "rule_type": "NIDS",
+    "event_id": 3483,
+    "threshold": 10,
+    "window_sec": 1800,
+    "severity": "HIGH",
+    "description": "Payment gateway abuse activity detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Card Skimming Infrastructure": {
+    "rule_type": "NIDS",
+    "event_id": 3484,
+    "threshold": 5,
+    "window_sec": 1800,
+    "severity": "CRITICAL",
+    "description": "Card-skimming infrastructure communication detected.",
+    "mitre_tactic": "Collection",
+    "mitre_technique": "T1005 - Data from Local System"
+  },
+  "Magecart Style Attack": {
+    "rule_type": "NIDS",
+    "event_id": 3485,
+    "threshold": 5,
+    "window_sec": 1800,
+    "severity": "CRITICAL",
+    "description": "Magecart-style payment skimming attack detected.",
+    "mitre_tactic": "Collection",
+    "mitre_technique": "T1005 - Data from Local System"
+  },
+  "Data Harvesting Campaign": {
+    "rule_type": "NIDS",
+    "event_id": 3486,
+    "threshold": 15,
+    "window_sec": 3600,
+    "severity": "HIGH",
+    "description": "Large-scale data harvesting activity detected.",
+    "mitre_tactic": "Collection",
+    "mitre_technique": "T1005 - Data from Local System"
+  },
+  "Mass Credential Exfiltration": {
+    "rule_type": "NIDS",
+    "event_id": 3487,
+    "threshold": 15,
+    "window_sec": 3600,
+    "severity": "CRITICAL",
+    "description": "Mass credential exfiltration activity detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "Nationwide Attack Coordination": {
+    "rule_type": "NIDS",
+    "event_id": 3488,
+    "threshold": 25,
+    "window_sec": 7200,
+    "severity": "CRITICAL",
+    "description": "Nationwide coordinated attack activity detected.",
+    "mitre_tactic": "All",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "Critical Infrastructure Targeting": {
+    "rule_type": "NIDS",
+    "event_id": 3489,
+    "threshold": 10,
+    "window_sec": 7200,
+    "severity": "CRITICAL",
+    "description": "Critical infrastructure targeting activity detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Hybrid Warfare Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3490,
+    "threshold": 20,
+    "window_sec": 7200,
+    "severity": "CRITICAL",
+    "description": "Hybrid cyber warfare network activity detected.",
+    "mitre_tactic": "All",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "Satellite Communication Hijack": {
+    "rule_type": "NIDS",
+    "event_id": 3491,
+    "threshold": 3,
+    "window_sec": 7200,
+    "severity": "CRITICAL",
+    "description": "Satellite communication hijacking detected.",
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "T1078 - Valid Accounts"
+  },
+  "Military Grade Malware Traffic": {
+    "rule_type": "NIDS",
+    "event_id": 3492,
+    "threshold": 5,
+    "window_sec": 7200,
+    "severity": "CRITICAL",
+    "description": "Military-grade malware communication detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Cyber Espionage Campaign": {
+    "rule_type": "NIDS",
+    "event_id": 3493,
+    "threshold": 15,
+    "window_sec": 10800,
+    "severity": "CRITICAL",
+    "description": "Cyber espionage campaign indicators detected.",
+    "mitre_tactic": "Collection",
+    "mitre_technique": "T1005 - Data from Local System"
+  },
+  "Persistent Reconnaissance Grid": {
+    "rule_type": "NIDS",
+    "event_id": 3494,
+    "threshold": 30,
+    "window_sec": 10800,
+    "severity": "HIGH",
+    "description": "Persistent reconnaissance grid activity detected.",
+    "mitre_tactic": "Reconnaissance",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "Covert Exfiltration Network": {
+    "rule_type": "NIDS",
+    "event_id": 3495,
+    "threshold": 15,
+    "window_sec": 10800,
+    "severity": "CRITICAL",
+    "description": "Covert exfiltration network activity detected.",
+    "mitre_tactic": "Exfiltration",
+    "mitre_technique": "T1041 - Exfiltration Over C2 Channel"
+  },
+  "Global Botnet Synchronization": {
+    "rule_type": "NIDS",
+    "event_id": 3496,
+    "threshold": 40,
+    "window_sec": 10800,
+    "severity": "CRITICAL",
+    "description": "Global botnet synchronization activity detected.",
+    "mitre_tactic": "Command and Control",
+    "mitre_technique": "T1071 - Application Layer Protocol"
+  },
+  "Massive DDoS Coordination": {
+    "rule_type": "NIDS",
+    "event_id": 3497,
+    "threshold": 100,
+    "window_sec": 3600,
+    "severity": "CRITICAL",
+    "description": "Massive distributed denial-of-service coordination detected.",
+    "mitre_tactic": "Impact",
+    "mitre_technique": "T1486 - Data Encrypted for Impact"
+  },
+  "Cross Border Attack Infrastructure": {
+    "rule_type": "NIDS",
+    "event_id": 3498,
+    "threshold": 25,
+    "window_sec": 10800,
+    "severity": "CRITICAL",
+    "description": "Cross-border attack infrastructure communication detected.",
+    "mitre_tactic": "All",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "Global Threat Escalation": {
+    "rule_type": "NIDS",
+    "event_id": 3499,
+    "threshold": 50,
+    "window_sec": 14400,
+    "severity": "CRITICAL",
+    "description": "Global threat escalation indicators detected.",
+    "mitre_tactic": "All",
+    "mitre_technique": "T1000 - Unknown"
+  },
+  "Full Scale Cyber Offensive": {
+    "rule_type": "NIDS",
+    "event_id": 3500,
+    "threshold": 75,
+    "window_sec": 14400,
+    "severity": "CRITICAL",
+    "description": "Full-scale coordinated cyber offensive activity detected.",
+    "mitre_tactic": "All",
+    "mitre_technique": "T1000 - Unknown"
+  }
+}

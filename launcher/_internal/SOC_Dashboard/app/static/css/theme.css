@@ -1,0 +1,128 @@
+/* =========================================
+   DARK THEME
+========================================= */
+
+:root{
+
+    /* BACKGROUNDS */
+
+    --bg-primary:#031b29;
+
+    --bg-secondary:#0b2232;
+
+    --bg-card:#102a3d;
+
+    --bg-card-2:#173549;
+
+    --bg-hover:#1c4258;
+
+    /* SIDEBAR */
+
+    --sidebar-bg:#071827;
+
+    --sidebar-hover:#11344c;
+
+    /* TEXT */
+
+    --text-primary:#f3f7ff;
+
+    --text-secondary:#9cb3c7;
+
+    --text-muted:#6f8598;
+
+    /* ACCENTS */
+
+    --primary:#2d7dff;
+
+    --secondary:#1fd1ff;
+
+    --success:#4cd964;
+
+    --warning:#ffb020;
+
+    --danger:#ff4d4f;
+
+    --critical:#ff2e2e;
+
+    /* BORDERS */
+
+    --border:#21435b;
+
+    --border-soft:
+    rgba(255,255,255,0.06);
+
+    /* GLOW */
+
+    --glow:
+    0 0 18px rgba(45,125,255,0.18);
+
+    --chart-axis:#ffffff;
+
+    --chart-grid:rgba(255,255,255,0.08);
+
+}
+
+/* =========================================
+   LIGHT THEME
+========================================= */
+
+body.light-mode{
+
+    --bg-primary:#eef3f8;
+
+    --bg-secondary:#f7f9fc;
+
+    --bg-card:#ffffff;
+
+    --bg-card-2:#edf2f7;
+
+    --bg-hover:#dce7f2;
+
+    /* SIDEBAR */
+
+    --sidebar-bg:#ffffff;
+
+    --sidebar-hover:#e4edf6;
+
+    /* TEXT */
+
+    --text-primary:#132235;
+
+    --text-secondary:#4b6075;
+
+    --text-muted:#708499;
+
+    /* ACCENTS */
+
+    --primary:#2563eb;
+
+    --secondary:#06b6d4;
+
+    --success:#16a34a;
+
+    --warning:#f59e0b;
+
+    --danger:#ef4444;
+
+    --critical:#dc2626;
+
+    /* BORDERS */
+
+    --border:#d6e2ee;
+
+    --border-soft:
+    rgba(0,0,0,0.06);
+
+    /* GLOW */
+
+    --glow:
+    0 0 12px rgba(37,99,235,0.12);
+
+}
+
+body.light-mode{
+
+    --chart-axis:#081b30;
+
+    --chart-grid:rgba(0,0,0,0.08);
+}
