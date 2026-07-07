@@ -30,7 +30,12 @@ DATABASE_DIR = ROOT_DIR / "database"
 DATABASE_DIR.mkdir(exist_ok=True)
 
 # ---- Delete all previous session databases ----
+# IMPORTANT: exclude soc_users.db (permanent user accounts — never delete)
+# and persistent_seen.db (cross-session dedup hashes)
+_PROTECTED_DBS = {"soc_users.db", "persistent_seen.db"}
 for _old_db in DATABASE_DIR.glob("soc_*.db"):
+    if _old_db.name in _PROTECTED_DBS:
+        continue  # never delete persistent databases
     try:
         _old_db.unlink()
         print(f"[SOC] Cleared old session DB: {_old_db.name}")
@@ -856,6 +861,29 @@ def update_cursor(
     conn.commit()
 
     conn.close()
+
+
+# ── PERSISTENT SEEN-ALERTS DATABASE ──────────────────────────────
+# Stores SHA-256 hashes of alerts seen across sessions so the same
+# alert is never shown again even after a server restart.
+# This DB survives restarts (excluded from the soc_*.db deletion).
+
+_PERSISTENT_SEEN_PATH = DATABASE_DIR / "persistent_seen.db"
+
+
+def _get_persistent_conn():
+    """Return a connection to the cross-session dedup database."""
+    conn = sqlite3.connect(str(_PERSISTENT_SEEN_PATH))
+    conn.row_factory = sqlite3.Row
+    # Create table if it does not exist yet
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS seen_alerts (
+            alert_hash TEXT PRIMARY KEY,
+            first_seen TEXT NOT NULL
+        )
+    """)
+    conn.commit()
+    return conn
 
 
 def clear_persistent_seen():
