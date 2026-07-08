@@ -115,25 +115,25 @@ The system collects telemetry from **11 Windows event sources**, evaluates event
 
 ## Screenshots
 
-> Screenshots from the live dashboard — taken during testing on Windows 11
+> Screenshots from the live dashboard — taken during testing on Windows 10
 
 ### Main Dashboard
-![Main Dashboard](docs/screenshots/dashboard.png)
+![Main Dashboard](screenshots/dashboard.png)
 
-*335 alerts detected — 152 Critical, 168 High, 15 Medium | Defense Evasion and Persistence as top categories*
+*Alerts Categories —  Critical, High, Medium, Low | Defense Evasion and Persistence as top categories*
 
 ### HIDS Investigation Console
-![HIDS Console](docs/screenshots/hids_console.png)
+![HIDS Console](screenshots/hids_console.png)
 
 *Correlated incident groups GRP-150 to GRP-147 — Firmware Persistence, ICS SCADA Command Injection, UEBA Long Term Persistence*
 
 ### AI Investigation Center
-![AI Investigation](docs/screenshots/ai_investigation.png)
+![AI Investigation](screenshots/ai_investigation.png)
 
 *Risk score 69/100 — HIGH threat level — MITRE ATT&CK technique mapping across 7 analysis tabs*
 
 ### Detection Rules Management
-![Detection Rules](docs/screenshots/rules.png)
+![Detection Rules](screenshots/rules.png)
 
 *1,419 rules — HIDS and NIDS tabs — full CRUD for Admin role*
 
